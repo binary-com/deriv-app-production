@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["statement"],{
 
-/***/ 842:
+/***/ 843:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26,7 +26,7 @@ var _reactRouterDom = __webpack_require__(56);
 
 var _localize = __webpack_require__(5);
 
-var _DataTable = __webpack_require__(845);
+var _DataTable = __webpack_require__(846);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
@@ -34,15 +34,15 @@ var _helpers = __webpack_require__(177);
 
 var _connect = __webpack_require__(7);
 
-var _dataTableConstants = __webpack_require__(856);
+var _dataTableConstants = __webpack_require__(857);
 
-var _placeholderComponent = __webpack_require__(857);
+var _placeholderComponent = __webpack_require__(858);
 
 var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
-var _reportsMeta = __webpack_require__(855);
+var _reportsMeta = __webpack_require__(856);
 
-var _emptyTradeHistoryMessage = __webpack_require__(854);
+var _emptyTradeHistoryMessage = __webpack_require__(855);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 

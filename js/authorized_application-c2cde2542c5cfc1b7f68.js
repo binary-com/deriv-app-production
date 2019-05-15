@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["limits"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["authorized_application"],{
 
-/***/ 831:
+/***/ 829:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18,28 +18,28 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Limits = function Limits(_ref) {
+var AuthorizedApplications = function AuthorizedApplications(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-Limits.propTypes = {
+AuthorizedApplications.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = Limits;
+exports.default = AuthorizedApplications;
 
 /***/ }),
 
-/***/ 844:
+/***/ 845:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

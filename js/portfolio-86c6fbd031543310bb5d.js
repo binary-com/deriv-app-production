@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["open_positions~profit_table~statement"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["portfolio"],{
 
-/***/ 845:
+/***/ 838:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,28 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dataTable = __webpack_require__(848);
+var _portfolio = __webpack_require__(870);
+
+var _portfolio2 = _interopRequireDefault(_portfolio);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _portfolio2.default;
+
+/***/ }),
+
+/***/ 846:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dataTable = __webpack_require__(849);
 
 var _dataTable2 = _interopRequireDefault(_dataTable);
 
@@ -21,86 +42,7 @@ exports.default = _dataTable2.default;
 
 /***/ }),
 
-/***/ 847:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _underlyingIcon = __webpack_require__(296);
-
-var _Types = __webpack_require__(129);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getMarketInformation = function getMarketInformation(payload) {
-    var pattern = new RegExp('^([A-Z]+)_((OTC_[A-Z0-9]+)|R_[\\d]{2,3}|[A-Z]+)_'); // Used to get market name from shortcode
-    var extracted = pattern.exec(payload.shortcode);
-    if (extracted !== null) {
-        return {
-            category: extracted[1].toLowerCase(),
-            underlying: extracted[2]
-        };
-    }
-    return null;
-};
-
-var MarketSymbolIconRow = function MarketSymbolIconRow(_ref) {
-    var payload = _ref.payload,
-        show_description = _ref.show_description;
-
-    var should_show_category_icon = typeof payload.shortcode === 'string';
-    var market_information = getMarketInformation(payload);
-
-    if (should_show_category_icon && market_information) {
-        return _react2.default.createElement(
-            'div',
-            { className: 'market-symbol-icon' },
-            _react2.default.createElement(
-                'div',
-                { className: 'market-symbol-icon-name' },
-                _react2.default.createElement(_underlyingIcon.UnderlyingIcon, { market: market_information.underlying }),
-                show_description && payload.display_name
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'market-symbol-icon-category' },
-                _react2.default.createElement(_Types.IconTradeType, { type: market_information.category }),
-                show_description && market_information.category
-            )
-        );
-    }
-
-    return _react2.default.createElement(
-        'svg',
-        { width: '32', height: '32', className: 'unknown-icon' },
-        _react2.default.createElement('rect', { width: '32', height: '32' })
-    );
-};
-
-MarketSymbolIconRow.propTypes = {
-    action: _propTypes2.default.string,
-    payload: _propTypes2.default.object,
-    show_description: _propTypes2.default.bool
-};
-
-exports.default = MarketSymbolIconRow;
-
-/***/ }),
-
-/***/ 848:
+/***/ 849:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,7 +72,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tableRow = __webpack_require__(849);
+var _tableRow = __webpack_require__(850);
 
 var _tableRow2 = _interopRequireDefault(_tableRow);
 
@@ -280,7 +222,7 @@ exports.default = DataTable;
 
 /***/ }),
 
-/***/ 849:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -304,11 +246,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(56);
 
-var _tableCell = __webpack_require__(850);
+var _tableCell = __webpack_require__(851);
 
 var _tableCell2 = _interopRequireDefault(_tableCell);
 
-var _tableRowInfo = __webpack_require__(851);
+var _tableRowInfo = __webpack_require__(852);
 
 var _tableRowInfo2 = _interopRequireDefault(_tableRowInfo);
 
@@ -373,7 +315,7 @@ exports.default = TableRow;
 
 /***/ }),
 
-/***/ 850:
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -416,7 +358,7 @@ exports.default = TableCell;
 
 /***/ }),
 
-/***/ 851:
+/***/ 852:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,7 +449,7 @@ TableRowInfo.propTypes = {
 
 /***/ }),
 
-/***/ 852:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -562,7 +504,7 @@ exports.default = IndicativeCell;
 
 /***/ }),
 
-/***/ 853:
+/***/ 854:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -595,7 +537,223 @@ exports.default = Loading;
 
 /***/ }),
 
-/***/ 854:
+/***/ 870:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _mobxReact = __webpack_require__(12);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(56);
+
+var _DataTable = __webpack_require__(846);
+
+var _DataTable2 = _interopRequireDefault(_DataTable);
+
+var _helpers = __webpack_require__(177);
+
+var _connect = __webpack_require__(7);
+
+var _cardList = __webpack_require__(871);
+
+var _cardList2 = _interopRequireDefault(_cardList);
+
+var _emptyPortfolioMessage = __webpack_require__(299);
+
+var _emptyPortfolioMessage2 = _interopRequireDefault(_emptyPortfolioMessage);
+
+var _dataTableConstants = __webpack_require__(873);
+
+var _loading = __webpack_require__(854);
+
+var _loading2 = _interopRequireDefault(_loading);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Portfolio = function (_React$Component) {
+    _inherits(Portfolio, _React$Component);
+
+    function Portfolio() {
+        _classCallCheck(this, Portfolio);
+
+        return _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).apply(this, arguments));
+    }
+
+    _createClass(Portfolio, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.onMount();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.props.onUnmount();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                active_positions = _props.active_positions,
+                is_mobile = _props.is_mobile,
+                is_tablet = _props.is_tablet,
+                is_loading = _props.is_loading,
+                error = _props.error,
+                totals = _props.totals,
+                is_empty = _props.is_empty,
+                currency = _props.currency;
+
+
+            if (error) {
+                return _react2.default.createElement(
+                    'p',
+                    null,
+                    error
+                );
+            }
+
+            if (is_loading) {
+                return _react2.default.createElement(_loading2.default, null);
+            }
+
+            if (is_empty) {
+                return _react2.default.createElement(_emptyPortfolioMessage2.default, null);
+            }
+
+            var should_show_cards = is_mobile || is_tablet;
+
+            return _react2.default.createElement(
+                'div',
+                { className: (0, _classnames2.default)('portfolio container', { 'portfolio--card-view': should_show_cards }) },
+                should_show_cards ? _react2.default.createElement(_cardList2.default, { data: active_positions, currency: currency }) : _react2.default.createElement(_DataTable2.default, {
+                    className: 'portfolio',
+                    columns: (0, _dataTableConstants.getTableColumnsTemplate)(currency),
+                    data_source: active_positions,
+                    footer: totals,
+                    has_fixed_header: true,
+                    getRowAction: function getRowAction(row_obj) {
+                        return (0, _helpers.getContractPath)(row_obj.id);
+                    }
+                })
+            );
+        }
+    }]);
+
+    return Portfolio;
+}(_react2.default.Component);
+
+Portfolio.propTypes = {
+    active_positions: _mobxReact.PropTypes.arrayOrObservableArray,
+    currency: _propTypes2.default.string,
+    error: _propTypes2.default.string,
+    history: _propTypes2.default.object,
+    is_empty: _propTypes2.default.bool,
+    is_loading: _propTypes2.default.bool,
+    is_mobile: _propTypes2.default.bool,
+    is_tablet: _propTypes2.default.bool,
+    onMount: _propTypes2.default.func,
+    onUnmount: _propTypes2.default.func,
+    totals: _propTypes2.default.object
+};
+
+exports.default = (0, _connect.connect)(function (_ref) {
+    var modules = _ref.modules,
+        client = _ref.client,
+        ui = _ref.ui;
+    return {
+        currency: client.currency,
+        active_positions: modules.portfolio.active_positions,
+        error: modules.portfolio.error,
+        is_empty: modules.portfolio.is_empty,
+        is_loading: modules.portfolio.is_loading,
+        totals: modules.portfolio.totals,
+        onMount: modules.portfolio.onMount,
+        onUnmount: modules.portfolio.onUnmount,
+        is_mobile: ui.is_mobile,
+        is_tablet: ui.is_tablet
+    };
+})((0, _reactRouterDom.withRouter)(Portfolio));
+
+/***/ }),
+
+/***/ 871:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _mobxReact = __webpack_require__(12);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _portfolioCard = __webpack_require__(872);
+
+var _portfolioCard2 = _interopRequireDefault(_portfolioCard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CardList = function CardList(_ref) {
+    var data = _ref.data,
+        currency = _ref.currency;
+    return _react2.default.createElement(
+        'div',
+        { className: 'card-list' },
+        data.map(function (portfolio_position, id) {
+            return _react2.default.createElement(_portfolioCard2.default, _extends({
+                key: id
+            }, portfolio_position, {
+                currency: currency
+            }));
+        })
+    );
+};
+
+CardList.propTypes = {
+    currency: _propTypes2.default.string,
+    data: _mobxReact.PropTypes.arrayOrObservableArray
+};
+
+exports.default = CardList;
+
+/***/ }),
+
+/***/ 872:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -613,88 +771,111 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(56);
+
+var _money = __webpack_require__(83);
+
+var _money2 = _interopRequireDefault(_money);
+
+var _helpers = __webpack_require__(177);
+
+var _remainingTime = __webpack_require__(178);
+
+var _remainingTime2 = _interopRequireDefault(_remainingTime);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var EmptyTradeHistoryMessage = function EmptyTradeHistoryMessage(_ref) {
-    var has_selected_date = _ref.has_selected_date,
-        component_icon = _ref.component_icon,
-        localized_message = _ref.localized_message,
-        localized_period_message = _ref.localized_period_message;
-
-    var ComponentIcon = component_icon;
-
+var PortfolioCard = function PortfolioCard(_ref) {
+    var currency = _ref.currency,
+        details = _ref.details,
+        expiry_time = _ref.expiry_time,
+        id = _ref.id,
+        indicative = _ref.indicative,
+        payout = _ref.payout,
+        purchase = _ref.purchase,
+        reference = _ref.reference,
+        status = _ref.status;
     return _react2.default.createElement(
-        _react2.default.Fragment,
-        null,
+        _reactRouterDom.NavLink,
+        {
+            className: 'portfolio-card card-list__card card-list__card-link',
+            activeClassName: 'active',
+            to: (0, _helpers.getContractPath)(id)
+        },
         _react2.default.createElement(
             'div',
-            { className: 'empty-trade-history' },
-            _react2.default.createElement(ComponentIcon, { className: 'empty-trade-history__icon' }),
+            { className: 'portfolio-card__header' },
             _react2.default.createElement(
                 'span',
-                { className: 'empty-trade-history__text' },
-                !has_selected_date ? localized_message : localized_period_message
-            )
-        )
-    );
-};
-
-EmptyTradeHistoryMessage.propTypes = {
-    component_icon: _propTypes2.default.func,
-    has_selected_date: _propTypes2.default.bool,
-    localized_message: _propTypes2.default.string,
-    localized_period_message: _propTypes2.default.string
-};
-
-exports.default = EmptyTradeHistoryMessage;
-
-/***/ }),
-
-/***/ 855:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.ReportsMeta = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ReportsMeta = function ReportsMeta(_ref) {
-    var i18n_heading = _ref.i18n_heading,
-        i18n_message = _ref.i18n_message;
-    return _react2.default.createElement(
-        'div',
-        { className: 'reports__meta' },
-        _react2.default.createElement(
-            'div',
-            { className: 'reports__meta-description' },
-            _react2.default.createElement(
-                'h1',
-                { className: 'reports__meta-description--heading' },
-                i18n_heading
+                { className: 'portfolio-card__date' },
+                _react2.default.createElement(_remainingTime2.default, { end_time: expiry_time })
             ),
             _react2.default.createElement(
-                'p',
-                { className: 'reports__meta-description--paragraph' },
-                i18n_message
+                'span',
+                { className: 'portfolio-card__refid' },
+                reference
+            )
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'portfolio-card__body' },
+            _react2.default.createElement(
+                'div',
+                { className: 'portfolio-card__desc' },
+                details
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'portfolio-card__row' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'portfolio-card__cell portfolio-card__purchase' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'portfolio-card__cell-text' },
+                        _react2.default.createElement(_money2.default, { amount: purchase, currency: currency })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'portfolio-card__cell portfolio-card__payout' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'portfolio-card__cell-text' },
+                        _react2.default.createElement(_money2.default, { amount: payout, currency: currency })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'portfolio-card__cell portfolio-card__indicative portfolio-card__indicative--' + status },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'portfolio-card__cell-text' },
+                        _react2.default.createElement(_money2.default, { amount: indicative, currency: currency })
+                    )
+                )
             )
         )
     );
 };
 
-exports.ReportsMeta = ReportsMeta;
+PortfolioCard.propTypes = {
+    currency: _propTypes2.default.string,
+    details: _propTypes2.default.string,
+    expiry_time: _propTypes2.default.number,
+    id: _propTypes2.default.number,
+    indicative: _propTypes2.default.number,
+    payout: _propTypes2.default.number,
+    purchase: _propTypes2.default.number,
+    reference: _propTypes2.default.number,
+    status: _propTypes2.default.string
+};
+
+exports.default = PortfolioCard;
 
 /***/ }),
 
-/***/ 856:
+/***/ 873:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -703,7 +884,7 @@ exports.ReportsMeta = ReportsMeta;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.getOpenPositionsColumnsTemplate = exports.getProfitTableColumnsTemplate = exports.getStatementTableColumnsTemplate = undefined;
+exports.getTableColumnsTemplate = undefined;
 
 var _react = __webpack_require__(0);
 
@@ -711,214 +892,76 @@ var _react2 = _interopRequireDefault(_react);
 
 var _localize = __webpack_require__(5);
 
-var _Label = __webpack_require__(888);
-
-var _Label2 = _interopRequireDefault(_Label);
-
 var _money = __webpack_require__(83);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _ProgressSliderStream = __webpack_require__(890);
+var _remainingTime = __webpack_require__(178);
 
-var _ProgressSliderStream2 = _interopRequireDefault(_ProgressSliderStream);
+var _remainingTime2 = _interopRequireDefault(_remainingTime);
 
-var _indicativeCell = __webpack_require__(852);
+var _contractTypeCell = __webpack_require__(874);
+
+var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
+
+var _indicativeCell = __webpack_require__(853);
 
 var _indicativeCell2 = _interopRequireDefault(_indicativeCell);
 
-var _profitLoss = __webpack_require__(859);
-
-var _marketSymbolIconRow = __webpack_require__(847);
-
-var _marketSymbolIconRow2 = _interopRequireDefault(_marketSymbolIconRow);
-
-var _profit_loss_cell = __webpack_require__(892);
-
-var _profit_loss_cell2 = _interopRequireDefault(_profit_loss_cell);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var getModeFromValue = function getModeFromValue(key) {
-    var map = {
-        deposit: 'warn',
-        sell: 'danger',
-        buy: 'success',
-        default: 'default'
-    };
-
-    if (Object.keys(map).find(function (x) {
-        return x === key;
-    })) {
-        return map[key];
-    }
-
-    return map.default;
-};
 /* eslint-disable react/display-name, react/prop-types */
-var getStatementTableColumnsTemplate = exports.getStatementTableColumnsTemplate = function getStatementTableColumnsTemplate(currency) {
+var getTableColumnsTemplate = exports.getTableColumnsTemplate = function getTableColumnsTemplate(currency) {
     return [{
-        key: 'icon',
-        title: '',
-        col_index: 'action_type',
+        title: (0, _localize.localize)('Reference No.'),
+        col_index: 'reference',
         renderCellContent: function renderCellContent(_ref) {
             var cell_value = _ref.cell_value,
-                row_obj = _ref.row_obj;
-            return _react2.default.createElement(_marketSymbolIconRow2.default, {
-                action: cell_value,
-                key: row_obj.transaction_id,
-                payload: row_obj
-            });
+                is_footer = _ref.is_footer;
+            return is_footer ? (0, _localize.localize)('Total') : cell_value;
         }
     }, {
-        title: (0, _localize.localize)('Ref. ID'),
-        col_index: 'refid'
-    }, {
-        title: (0, _localize.localize)('Transaction time'),
-        col_index: 'date'
-    }, {
-        key: 'mode',
-        title: (0, _localize.localize)('Transaction'),
-        col_index: 'action_type',
+        title: (0, _localize.localize)('Contract Type'),
+        col_index: 'type',
         renderCellContent: function renderCellContent(_ref2) {
             var cell_value = _ref2.cell_value,
-                row_obj = _ref2.row_obj;
-            return _react2.default.createElement(
-                _Label2.default,
-                { mode: getModeFromValue(cell_value) },
-                row_obj.action
-            );
+                is_footer = _ref2.is_footer;
+
+            if (is_footer) return '';
+            return _react2.default.createElement(_contractTypeCell2.default, { type: cell_value });
         }
     }, {
-        title: (0, _localize.localize)('Credit/Debit'),
-        col_index: 'amount',
+        title: (0, _localize.localize)('Contract Details'),
+        col_index: 'details'
+    }, {
+        title: (0, _localize.localize)('Remaining Time'),
+        col_index: 'expiry_time',
         renderCellContent: function renderCellContent(_ref3) {
-            var cell_value = _ref3.cell_value;
-            return _react2.default.createElement(
-                'div',
-                { className: 'amount--' + (0, _profitLoss.getProfitOrLoss)(cell_value) },
-                _react2.default.createElement(_money2.default, { has_sign: true, amount: cell_value.replace(/[,]+/g, ''), currency: currency })
-            );
+            var cell_value = _ref3.cell_value,
+                is_footer = _ref3.is_footer;
+            return is_footer ? '' : _react2.default.createElement(_remainingTime2.default, { end_time: cell_value });
         }
     }, {
-        title: (0, _localize.localize)('Balance'),
-        col_index: 'balance',
+        title: (0, _localize.localize)('Potential Payout'),
+        col_index: 'payout',
         renderCellContent: function renderCellContent(_ref4) {
             var cell_value = _ref4.cell_value;
-            return _react2.default.createElement(_money2.default, { amount: cell_value.replace(/[,]+/g, ''), currency: currency });
+            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
         }
-    }];
-};
-var getProfitTableColumnsTemplate = exports.getProfitTableColumnsTemplate = function getProfitTableColumnsTemplate() {
-    return [{
-        key: 'icon',
-        title: '',
-        col_index: 'action_type',
+    }, {
+        title: (0, _localize.localize)('Purchase'),
+        col_index: 'purchase',
         renderCellContent: function renderCellContent(_ref5) {
-            var cell_value = _ref5.cell_value,
-                row_obj = _ref5.row_obj,
-                is_footer = _ref5.is_footer;
-
-            if (is_footer) return (0, _localize.localize)('Total profit/loss');
-
-            return _react2.default.createElement(_marketSymbolIconRow2.default, {
-                action: cell_value,
-                key: row_obj.transaction_id,
-                payload: row_obj
-            });
+            var cell_value = _ref5.cell_value;
+            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
         }
     }, {
-        title: (0, _localize.localize)('Ref. ID'),
-        col_index: 'transaction_id'
-    }, {
-        title: (0, _localize.localize)('Buy time'),
-        col_index: 'purchase_time'
-    }, {
-        title: (0, _localize.localize)('Buy price'),
-        col_index: 'buy_price',
+        title: (0, _localize.localize)('Indicative'),
+        col_index: 'indicative',
         renderCellContent: function renderCellContent(_ref6) {
             var cell_value = _ref6.cell_value,
-                is_footer = _ref6.is_footer;
-
-            if (is_footer) return '';
-
-            return _react2.default.createElement(_money2.default, { amount: cell_value });
-        }
-    }, {
-        title: (0, _localize.localize)('Sell time'),
-        col_index: 'sell_time'
-    }, {
-        title: (0, _localize.localize)('Sell price'),
-        col_index: 'sell_price',
-        renderCellContent: function renderCellContent(_ref7) {
-            var cell_value = _ref7.cell_value,
-                is_footer = _ref7.is_footer;
-
-            if (is_footer) return '';
-
-            return _react2.default.createElement(_money2.default, { amount: cell_value });
-        }
-    }, {
-        title: (0, _localize.localize)('Profit/Loss'),
-        col_index: 'profit_loss',
-        renderCellContent: function renderCellContent(_ref8) {
-            var cell_value = _ref8.cell_value;
-            return _react2.default.createElement(
-                _profit_loss_cell2.default,
-                { value: cell_value },
-                _react2.default.createElement(_money2.default, { amount: cell_value })
-            );
-        }
-    }];
-};
-var getOpenPositionsColumnsTemplate = exports.getOpenPositionsColumnsTemplate = function getOpenPositionsColumnsTemplate(currency) {
-    return [{
-        title: '',
-        col_index: 'type',
-        renderCellContent: function renderCellContent(_ref9) {
-            var cell_value = _ref9.cell_value,
-                row_obj = _ref9.row_obj,
-                is_footer = _ref9.is_footer;
-
-            if (is_footer) return (0, _localize.localize)('Total');
-
-            return _react2.default.createElement(_marketSymbolIconRow2.default, {
-                action: cell_value,
-                key: row_obj.id,
-                payload: row_obj.contract_info
-            });
-        }
-    }, {
-        title: (0, _localize.localize)('Ref. ID'),
-        col_index: 'reference'
-    }, {
-        title: (0, _localize.localize)('Buy price'),
-        col_index: 'buy_price',
-        renderCellContent: function renderCellContent(_ref10) {
-            var cell_value = _ref10.cell_value;
-            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
-        }
-    }, {
-        title: (0, _localize.localize)('Potential payout'),
-        col_index: 'payout',
-        renderCellContent: function renderCellContent(_ref11) {
-            var cell_value = _ref11.cell_value;
-            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
-        }
-    }, {
-        title: (0, _localize.localize)('Indicative price'),
-        col_index: 'indicative',
-        renderCellContent: function renderCellContent(_ref12) {
-            var cell_value = _ref12.cell_value,
-                row_obj = _ref12.row_obj;
+                row_obj = _ref6.row_obj;
             return _react2.default.createElement(_indicativeCell2.default, { amount: +cell_value, currency: currency, status: row_obj.status });
-        }
-    }, {
-        title: (0, _localize.localize)('Remaining time'),
-        col_index: 'id',
-        renderCellContent: function renderCellContent(_ref13) {
-            var cell_value = _ref13.cell_value;
-            return _react2.default.createElement(_ProgressSliderStream2.default, { id: cell_value });
         }
     }];
 };
@@ -926,7 +969,7 @@ var getOpenPositionsColumnsTemplate = exports.getOpenPositionsColumnsTemplate = 
 
 /***/ }),
 
-/***/ 857:
+/***/ 874:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -936,265 +979,45 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _loading = __webpack_require__(853);
+var _propTypes = __webpack_require__(1);
 
-var _loading2 = _interopRequireDefault(_loading);
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _contract = __webpack_require__(92);
+
+var _icon = __webpack_require__(37);
+
+var _Types = __webpack_require__(128);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PlaceholderComponent = function PlaceholderComponent(props) {
-    var EmptyMessageComponent = props.empty_message_component;
+var ContractTypeCell = function ContractTypeCell(_ref) {
+    var type = _ref.type;
     return _react2.default.createElement(
-        _react2.default.Fragment,
-        null,
-        props.is_empty && _react2.default.createElement(EmptyMessageComponent, {
-            component_icon: props.component_icon,
-            has_selected_date: props.has_selected_date,
-            localized_message: props.localized_message
-        }),
-        props.is_loading && _react2.default.createElement(_loading2.default, null)
+        'div',
+        { className: 'contract-type' },
+        _react2.default.createElement(
+            'div',
+            { className: 'type-wrapper' },
+            _react2.default.createElement(_icon.Icon, { icon: _Types.IconTradeType, type: type.toLowerCase(), className: 'type' })
+        ),
+        _react2.default.createElement(
+            'span',
+            null,
+            type && (0, _contract.getContractTypeDisplay)(type) || ''
+        )
     );
 };
 
-PlaceholderComponent.propTypes = {
-    component_icon: _propTypes2.default.func,
-    empty_message_component: _propTypes2.default.func,
-    has_selected_date: _propTypes2.default.bool,
-    localized_message: _propTypes2.default.string
+ContractTypeCell.propTypes = {
+    type: _propTypes2.default.string
 };
 
-exports.default = PlaceholderComponent;
-
-/***/ }),
-
-/***/ 859:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var getProfitOrLoss = exports.getProfitOrLoss = function getProfitOrLoss(value) {
-  return +value.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
-};
-
-/***/ }),
-
-/***/ 888:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _label = __webpack_require__(889);
-
-var _label2 = _interopRequireDefault(_label);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _label2.default;
-
-/***/ }),
-
-/***/ 889:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _classnames = __webpack_require__(3);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var available_modes = ['default', 'success', 'warn', 'danger'];
-
-var Label = function Label(_ref) {
-    var mode = _ref.mode,
-        children = _ref.children;
-
-    var type = available_modes.some(function (m) {
-        return m === mode;
-    }) ? mode : 'default';
-
-    return _react2.default.createElement(
-        'span',
-        { className: (0, _classnames2.default)('label', _defineProperty({}, 'label--' + type, type))
-        },
-        children
-    );
-};
-Label.propTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
-    mode: _propTypes2.default.oneOf(available_modes)
-};
-exports.default = Label;
-
-/***/ }),
-
-/***/ 890:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _progressSliderStream = __webpack_require__(891);
-
-var _progressSliderStream2 = _interopRequireDefault(_progressSliderStream);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _progressSliderStream2.default;
-
-/***/ }),
-
-/***/ 891:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _helpers = __webpack_require__(179);
-
-var _positionsProgressSlider = __webpack_require__(300);
-
-var _positionsProgressSlider2 = _interopRequireDefault(_positionsProgressSlider);
-
-var _connect = __webpack_require__(7);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ProgressSliderStream = function ProgressSliderStream(_ref) {
-    var id = _ref.id,
-        is_loading = _ref.is_loading,
-        getPositionById = _ref.getPositionById,
-        server_time = _ref.server_time;
-
-    var position = getPositionById(id);
-    if (!position) {
-        return _react2.default.createElement('div', null);
-    }
-
-    var contract_info = position.contract_info;
-
-    var percentage = (0, _helpers.getTimePercentage)(server_time, contract_info.purchase_time, contract_info.date_expiry);
-
-    return _react2.default.createElement(_positionsProgressSlider2.default, {
-        is_loading: is_loading,
-        remaining_time: contract_info.date_expiry,
-        percentage: percentage,
-        has_result: false,
-        current_tick: position.current_tick,
-        ticks_count: contract_info.ticks_count
-    });
-};
-
-ProgressSliderStream.propTypes = {
-    getPositionById: _propTypes2.default.func,
-    id: _propTypes2.default.oneOfType(_propTypes2.default.number, _propTypes2.default.string),
-    is_loading: _propTypes2.default.bool,
-    server_time: _propTypes2.default.object
-};
-
-exports.default = (0, _connect.connect)(function (_ref2) {
-    var modules = _ref2.modules,
-        common = _ref2.common;
-    return {
-        is_loading: modules.portfolio.is_loading,
-        server_time: common.server_time,
-        getPositionById: modules.portfolio.getPositionById
-    };
-})(ProgressSliderStream);
-
-/***/ }),
-
-/***/ 892:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _profitLoss = __webpack_require__(859);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ProfitLossCell = function ProfitLossCell(_ref) {
-    var value = _ref.value,
-        children = _ref.children;
-
-    var status = (0, _profitLoss.getProfitOrLoss)(value);
-
-    return _react2.default.createElement(
-        'span',
-        { className: 'amount--' + status },
-        children
-    );
-};
-
-ProfitLossCell.propTypes = {
-    value: _propTypes2.default.string
-};
-
-exports.default = ProfitLossCell;
+exports.default = ContractTypeCell;
 
 /***/ })
 

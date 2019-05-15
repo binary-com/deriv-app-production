@@ -1,44 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["settings","account_password","api_token","authorized_application","cashier_password","financial_assessment","limits","login_history","personal_details","self_exclusion"],{
 
-/***/ 826:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _section = __webpack_require__(844);
-
-var _section2 = _interopRequireDefault(_section);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var AccountPassword = function AccountPassword(_ref) {
-    var title = _ref.title,
-        description = _ref.description;
-    return _react2.default.createElement(_section2.default, { title: title, description: description });
-};
-
-AccountPassword.propTypes = {
-    description: _propTypes2.default.string,
-    title: _propTypes2.default.string
-};
-
-exports.default = AccountPassword;
-
-/***/ }),
-
 /***/ 827:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -57,24 +18,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ApiToken = function ApiToken(_ref) {
+var AccountPassword = function AccountPassword(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-ApiToken.propTypes = {
+AccountPassword.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = ApiToken;
+exports.default = AccountPassword;
 
 /***/ }),
 
@@ -96,24 +57,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AuthorizedApplications = function AuthorizedApplications(_ref) {
+var ApiToken = function ApiToken(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-AuthorizedApplications.propTypes = {
+ApiToken.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = AuthorizedApplications;
+exports.default = ApiToken;
 
 /***/ }),
 
@@ -135,24 +96,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CashierPassword = function CashierPassword(_ref) {
+var AuthorizedApplications = function AuthorizedApplications(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-CashierPassword.propTypes = {
+AuthorizedApplications.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = CashierPassword;
+exports.default = AuthorizedApplications;
 
 /***/ }),
 
@@ -174,24 +135,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FinancialAssessment = function FinancialAssessment(_ref) {
+var CashierPassword = function CashierPassword(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-FinancialAssessment.propTypes = {
+CashierPassword.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = FinancialAssessment;
+exports.default = CashierPassword;
 
 /***/ }),
 
@@ -213,24 +174,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Limits = function Limits(_ref) {
+var FinancialAssessment = function FinancialAssessment(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-Limits.propTypes = {
+FinancialAssessment.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = Limits;
+exports.default = FinancialAssessment;
 
 /***/ }),
 
@@ -252,24 +213,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LoginHistory = function LoginHistory(_ref) {
+var Limits = function Limits(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-LoginHistory.propTypes = {
+Limits.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = LoginHistory;
+exports.default = Limits;
 
 /***/ }),
 
@@ -291,24 +252,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PersonalDetails = function PersonalDetails(_ref) {
+var LoginHistory = function LoginHistory(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-PersonalDetails.propTypes = {
+LoginHistory.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = PersonalDetails;
+exports.default = LoginHistory;
 
 /***/ }),
 
@@ -330,7 +291,46 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(844);
+var _section = __webpack_require__(845);
+
+var _section2 = _interopRequireDefault(_section);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PersonalDetails = function PersonalDetails(_ref) {
+    var title = _ref.title,
+        description = _ref.description;
+    return _react2.default.createElement(_section2.default, { title: title, description: description });
+};
+
+PersonalDetails.propTypes = {
+    description: _propTypes2.default.string,
+    title: _propTypes2.default.string
+};
+
+exports.default = PersonalDetails;
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _section = __webpack_require__(845);
 
 var _section2 = _interopRequireDefault(_section);
 
@@ -351,7 +351,7 @@ exports.default = SelfExclusion;
 
 /***/ }),
 
-/***/ 838:
+/***/ 839:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -373,11 +373,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(56);
 
-var _menu = __webpack_require__(874);
+var _menu = __webpack_require__(875);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-var _settings_data = __webpack_require__(877);
+var _settings_data = __webpack_require__(878);
 
 var _settings_data2 = _interopRequireDefault(_settings_data);
 
@@ -467,7 +467,7 @@ exports.default = Settings;
 
 /***/ }),
 
-/***/ 844:
+/***/ 845:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -518,7 +518,7 @@ exports.default = Section;
 
 /***/ }),
 
-/***/ 874:
+/***/ 875:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -536,7 +536,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _menuList = __webpack_require__(875);
+var _menuList = __webpack_require__(876);
 
 var _menuList2 = _interopRequireDefault(_menuList);
 
@@ -574,7 +574,7 @@ exports.default = Menu;
 
 /***/ }),
 
-/***/ 875:
+/***/ 876:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -592,7 +592,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _menuItem = __webpack_require__(876);
+var _menuItem = __webpack_require__(877);
 
 var _menuItem2 = _interopRequireDefault(_menuItem);
 
@@ -632,7 +632,7 @@ exports.default = MenuList;
 
 /***/ }),
 
-/***/ 876:
+/***/ 877:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -703,7 +703,7 @@ exports.default = MenuItem;
 
 /***/ }),
 
-/***/ 877:
+/***/ 878:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -715,75 +715,75 @@ Object.defineProperty(exports, "__esModule", {
 
 var _localize = __webpack_require__(5);
 
-var _icPersonalDetails = __webpack_require__(878);
+var _icPersonalDetails = __webpack_require__(879);
 
 var _icPersonalDetails2 = _interopRequireDefault(_icPersonalDetails);
 
-var _icFinancialAssesment = __webpack_require__(879);
+var _icFinancialAssesment = __webpack_require__(880);
 
 var _icFinancialAssesment2 = _interopRequireDefault(_icFinancialAssesment);
 
-var _icAccountPassword = __webpack_require__(880);
+var _icAccountPassword = __webpack_require__(881);
 
 var _icAccountPassword2 = _interopRequireDefault(_icAccountPassword);
 
-var _icCashierPassword = __webpack_require__(881);
+var _icCashierPassword = __webpack_require__(882);
 
 var _icCashierPassword2 = _interopRequireDefault(_icCashierPassword);
 
-var _icSelfExclusion = __webpack_require__(882);
+var _icSelfExclusion = __webpack_require__(883);
 
 var _icSelfExclusion2 = _interopRequireDefault(_icSelfExclusion);
 
-var _icLimits = __webpack_require__(883);
+var _icLimits = __webpack_require__(884);
 
 var _icLimits2 = _interopRequireDefault(_icLimits);
 
-var _icLoginHistory = __webpack_require__(884);
+var _icLoginHistory = __webpack_require__(885);
 
 var _icLoginHistory2 = _interopRequireDefault(_icLoginHistory);
 
-var _icApiToken = __webpack_require__(885);
+var _icApiToken = __webpack_require__(886);
 
 var _icApiToken2 = _interopRequireDefault(_icApiToken);
 
-var _icAuthorisedApplications = __webpack_require__(886);
+var _icAuthorisedApplications = __webpack_require__(887);
 
 var _icAuthorisedApplications2 = _interopRequireDefault(_icAuthorisedApplications);
 
-var _accountPassword = __webpack_require__(826);
+var _accountPassword = __webpack_require__(827);
 
 var _accountPassword2 = _interopRequireDefault(_accountPassword);
 
-var _apiToken = __webpack_require__(827);
+var _apiToken = __webpack_require__(828);
 
 var _apiToken2 = _interopRequireDefault(_apiToken);
 
-var _authorizedApplications = __webpack_require__(828);
+var _authorizedApplications = __webpack_require__(829);
 
 var _authorizedApplications2 = _interopRequireDefault(_authorizedApplications);
 
-var _cashierPassword = __webpack_require__(829);
+var _cashierPassword = __webpack_require__(830);
 
 var _cashierPassword2 = _interopRequireDefault(_cashierPassword);
 
-var _financialAssessment = __webpack_require__(830);
+var _financialAssessment = __webpack_require__(831);
 
 var _financialAssessment2 = _interopRequireDefault(_financialAssessment);
 
-var _limits = __webpack_require__(831);
+var _limits = __webpack_require__(832);
 
 var _limits2 = _interopRequireDefault(_limits);
 
-var _loginHistory = __webpack_require__(832);
+var _loginHistory = __webpack_require__(833);
 
 var _loginHistory2 = _interopRequireDefault(_loginHistory);
 
-var _personalDetails = __webpack_require__(833);
+var _personalDetails = __webpack_require__(834);
 
 var _personalDetails2 = _interopRequireDefault(_personalDetails);
 
-var _selfExclusion = __webpack_require__(834);
+var _selfExclusion = __webpack_require__(835);
 
 var _selfExclusion2 = _interopRequireDefault(_selfExclusion);
 
@@ -846,7 +846,7 @@ exports.default = data;
 
 /***/ }),
 
-/***/ 878:
+/***/ 879:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -888,7 +888,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 879:
+/***/ 880:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -930,7 +930,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 880:
+/***/ 881:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -972,7 +972,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 881:
+/***/ 882:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1014,7 +1014,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 882:
+/***/ 883:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1056,7 +1056,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 883:
+/***/ 884:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1098,7 +1098,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 884:
+/***/ 885:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1140,7 +1140,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 885:
+/***/ 886:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1182,7 +1182,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 886:
+/***/ 887:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
