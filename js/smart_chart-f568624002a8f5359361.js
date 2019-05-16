@@ -142,7 +142,8 @@ var Chart = function (_React$Component) {
                     isConnectionOpened: this.props.is_socket_opened,
                     clearChart: this.props.should_clear_chart,
                     importedLayout: this.props.should_import_layout ? this.props.trade_chart_layout : null,
-                    onExportLayout: this.props.should_export_layout ? this.props.exportLayout : null
+                    onExportLayout: this.props.should_export_layout ? this.props.exportLayout : null,
+                    isStaticChart: this.props.is_static_chart
                 },
                 this.props.markers_array.map(function (marker, idx) {
                     return _react2.default.createElement(_marker2.default, {
@@ -170,6 +171,7 @@ Chart.propTypes = {
     is_contract_mode: _propTypes2.default.bool,
     is_mobile: _propTypes2.default.bool,
     is_socket_opened: _propTypes2.default.bool,
+    is_static_chart: _propTypes2.default.bool,
     is_title_enabled: _propTypes2.default.bool,
     markers_array: _propTypes2.default.array,
     onMount: _propTypes2.default.func,
@@ -205,6 +207,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         granularity: modules.smart_chart.granularity,
         is_contract_mode: modules.smart_chart.is_contract_mode,
         is_title_enabled: modules.smart_chart.is_title_enabled,
+        is_static_chart: modules.smart_chart.is_static_chart,
         markers_array: modules.smart_chart.markers_array,
         onMount: modules.smart_chart.onMount,
         onUnmount: modules.smart_chart.onUnmount,

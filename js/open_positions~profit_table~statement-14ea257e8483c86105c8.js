@@ -1138,7 +1138,7 @@ var ProgressSliderStream = function ProgressSliderStream(_ref) {
 
 ProgressSliderStream.propTypes = {
     getPositionById: _propTypes2.default.func,
-    id: _propTypes2.default.oneOfType(_propTypes2.default.number, _propTypes2.default.string),
+    id: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     is_loading: _propTypes2.default.bool,
     server_time: _propTypes2.default.object
 };
