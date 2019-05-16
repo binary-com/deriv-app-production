@@ -39,7 +39,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(56);
+var _reactRouterDom = __webpack_require__(57);
 
 var _verticalTab = __webpack_require__(297);
 
@@ -47,7 +47,7 @@ var _verticalTab2 = _interopRequireDefault(_verticalTab);
 
 var _Settings = __webpack_require__(298);
 
-var _routes = __webpack_require__(57);
+var _routes = __webpack_require__(58);
 
 var _routes2 = _interopRequireDefault(_routes);
 

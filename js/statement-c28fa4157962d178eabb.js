@@ -22,7 +22,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(56);
+var _reactRouterDom = __webpack_require__(57);
 
 var _localize = __webpack_require__(5);
 
