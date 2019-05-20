@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["open_positions~profit_table~statement"],{
 
-/***/ 846:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dataTable = __webpack_require__(849);
+var _dataTable = __webpack_require__(852);
 
 var _dataTable2 = _interopRequireDefault(_dataTable);
 
@@ -21,86 +21,7 @@ exports.default = _dataTable2.default;
 
 /***/ }),
 
-/***/ 848:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _underlyingIcon = __webpack_require__(296);
-
-var _Types = __webpack_require__(128);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getMarketInformation = function getMarketInformation(payload) {
-    var pattern = new RegExp('^([A-Z]+)_((OTC_[A-Z0-9]+)|R_[\\d]{2,3}|[A-Z]+)_'); // Used to get market name from shortcode
-    var extracted = pattern.exec(payload.shortcode);
-    if (extracted !== null) {
-        return {
-            category: extracted[1].toLowerCase(),
-            underlying: extracted[2]
-        };
-    }
-    return null;
-};
-
-var MarketSymbolIconRow = function MarketSymbolIconRow(_ref) {
-    var payload = _ref.payload,
-        show_description = _ref.show_description;
-
-    var should_show_category_icon = typeof payload.shortcode === 'string';
-    var market_information = getMarketInformation(payload);
-
-    if (should_show_category_icon && market_information) {
-        return _react2.default.createElement(
-            'div',
-            { className: 'market-symbol-icon' },
-            _react2.default.createElement(
-                'div',
-                { className: 'market-symbol-icon-name' },
-                _react2.default.createElement(_underlyingIcon.UnderlyingIcon, { market: market_information.underlying }),
-                show_description && payload.display_name
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'market-symbol-icon-category' },
-                _react2.default.createElement(_Types.IconTradeType, { type: market_information.category }),
-                show_description && market_information.category
-            )
-        );
-    }
-
-    return _react2.default.createElement(
-        'svg',
-        { width: '32', height: '32', className: 'unknown-icon' },
-        _react2.default.createElement('rect', { width: '32', height: '32' })
-    );
-};
-
-MarketSymbolIconRow.propTypes = {
-    action: _propTypes2.default.string,
-    payload: _propTypes2.default.object,
-    show_description: _propTypes2.default.bool
-};
-
-exports.default = MarketSymbolIconRow;
-
-/***/ }),
-
-/***/ 849:
+/***/ 852:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -120,7 +41,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _mobxReact = __webpack_require__(12);
 
-var _ttReactCustomScrollbars = __webpack_require__(102);
+var _ttReactCustomScrollbars = __webpack_require__(101);
 
 var _propTypes = __webpack_require__(1);
 
@@ -130,7 +51,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tableRow = __webpack_require__(850);
+var _tableRow = __webpack_require__(853);
 
 var _tableRow2 = _interopRequireDefault(_tableRow);
 
@@ -280,7 +201,7 @@ exports.default = DataTable;
 
 /***/ }),
 
-/***/ 850:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -304,11 +225,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(57);
 
-var _tableCell = __webpack_require__(851);
+var _tableCell = __webpack_require__(854);
 
 var _tableCell2 = _interopRequireDefault(_tableCell);
 
-var _tableRowInfo = __webpack_require__(852);
+var _tableRowInfo = __webpack_require__(855);
 
 var _tableRowInfo2 = _interopRequireDefault(_tableRowInfo);
 
@@ -373,7 +294,7 @@ exports.default = TableRow;
 
 /***/ }),
 
-/***/ 851:
+/***/ 854:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -416,7 +337,7 @@ exports.default = TableCell;
 
 /***/ }),
 
-/***/ 852:
+/***/ 855:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,7 +428,7 @@ TableRowInfo.propTypes = {
 
 /***/ }),
 
-/***/ 853:
+/***/ 856:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -527,7 +448,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _localize = __webpack_require__(5);
 
-var _money = __webpack_require__(83);
+var _money = __webpack_require__(68);
 
 var _money2 = _interopRequireDefault(_money);
 
@@ -562,40 +483,7 @@ exports.default = IndicativeCell;
 
 /***/ }),
 
-/***/ 854:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Loading = function Loading(_ref) {
-    var is_invisible = _ref.is_invisible,
-        theme = _ref.theme,
-        id = _ref.id;
-    return _react2.default.createElement(
-        'div',
-        { id: id, className: 'barspinner barspinner--' + (theme || 'dark') + (is_invisible ? ' invisible' : '') },
-        Array.from(new Array(5)).map(function (x, inx) {
-            return _react2.default.createElement('div', { key: inx, className: 'barspinner__rect barspinner__rect--' + (inx + 1) + ' rect' + (inx + 1) });
-        })
-    );
-};
-
-exports.default = Loading;
-
-/***/ }),
-
-/***/ 855:
+/***/ 857:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -650,7 +538,7 @@ exports.default = EmptyTradeHistoryMessage;
 
 /***/ }),
 
-/***/ 856:
+/***/ 858:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -694,7 +582,7 @@ exports.ReportsMeta = ReportsMeta;
 
 /***/ }),
 
-/***/ 857:
+/***/ 859:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -711,29 +599,29 @@ var _react2 = _interopRequireDefault(_react);
 
 var _localize = __webpack_require__(5);
 
-var _Label = __webpack_require__(889);
+var _Label = __webpack_require__(890);
 
 var _Label2 = _interopRequireDefault(_Label);
 
-var _money = __webpack_require__(83);
+var _money = __webpack_require__(68);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _ProgressSliderStream = __webpack_require__(891);
+var _ProgressSliderStream = __webpack_require__(892);
 
 var _ProgressSliderStream2 = _interopRequireDefault(_ProgressSliderStream);
 
-var _indicativeCell = __webpack_require__(853);
+var _indicativeCell = __webpack_require__(856);
 
 var _indicativeCell2 = _interopRequireDefault(_indicativeCell);
 
-var _profitLoss = __webpack_require__(860);
+var _profitLoss = __webpack_require__(862);
 
-var _marketSymbolIconRow = __webpack_require__(848);
+var _marketSymbolIconRow = __webpack_require__(894);
 
 var _marketSymbolIconRow2 = _interopRequireDefault(_marketSymbolIconRow);
 
-var _profit_loss_cell = __webpack_require__(893);
+var _profit_loss_cell = __webpack_require__(895);
 
 var _profit_loss_cell2 = _interopRequireDefault(_profit_loss_cell);
 
@@ -893,7 +781,7 @@ var getOpenPositionsColumnsTemplate = exports.getOpenPositionsColumnsTemplate = 
         col_index: 'reference'
     }, {
         title: (0, _localize.localize)('Buy price'),
-        col_index: 'buy_price',
+        col_index: 'purchase',
         renderCellContent: function renderCellContent(_ref10) {
             var cell_value = _ref10.cell_value;
             return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
@@ -926,7 +814,7 @@ var getOpenPositionsColumnsTemplate = exports.getOpenPositionsColumnsTemplate = 
 
 /***/ }),
 
-/***/ 858:
+/***/ 860:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -944,7 +832,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _loading = __webpack_require__(854);
+var _loading = __webpack_require__(296);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -975,7 +863,7 @@ exports.default = PlaceholderComponent;
 
 /***/ }),
 
-/***/ 860:
+/***/ 862:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -990,7 +878,7 @@ var getProfitOrLoss = exports.getProfitOrLoss = function getProfitOrLoss(value) 
 
 /***/ }),
 
-/***/ 889:
+/***/ 890:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1001,7 +889,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _label = __webpack_require__(890);
+var _label = __webpack_require__(891);
 
 var _label2 = _interopRequireDefault(_label);
 
@@ -1011,7 +899,7 @@ exports.default = _label2.default;
 
 /***/ }),
 
-/***/ 890:
+/***/ 891:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1062,7 +950,7 @@ exports.default = Label;
 
 /***/ }),
 
-/***/ 891:
+/***/ 892:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1073,7 +961,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _progressSliderStream = __webpack_require__(892);
+var _progressSliderStream = __webpack_require__(893);
 
 var _progressSliderStream2 = _interopRequireDefault(_progressSliderStream);
 
@@ -1083,7 +971,7 @@ exports.default = _progressSliderStream2.default;
 
 /***/ }),
 
-/***/ 892:
+/***/ 893:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1101,9 +989,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _helpers = __webpack_require__(179);
+var _helpers = __webpack_require__(183);
 
-var _positionsProgressSlider = __webpack_require__(300);
+var _positionsProgressSlider = __webpack_require__(303);
 
 var _positionsProgressSlider2 = _interopRequireDefault(_positionsProgressSlider);
 
@@ -1155,7 +1043,86 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 893:
+/***/ 894:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _underlyingIcon = __webpack_require__(297);
+
+var _Types = __webpack_require__(128);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var getMarketInformation = function getMarketInformation(payload) {
+    var pattern = new RegExp('^([A-Z]+)_((OTC_[A-Z0-9]+)|R_[\\d]{2,3}|[A-Z]+)_'); // Used to get market name from shortcode
+    var extracted = pattern.exec(payload.shortcode);
+    if (extracted !== null) {
+        return {
+            category: extracted[1].toLowerCase(),
+            underlying: extracted[2]
+        };
+    }
+    return null;
+};
+
+var MarketSymbolIconRow = function MarketSymbolIconRow(_ref) {
+    var payload = _ref.payload,
+        show_description = _ref.show_description;
+
+    var should_show_category_icon = typeof payload.shortcode === 'string';
+    var market_information = getMarketInformation(payload);
+
+    if (should_show_category_icon && market_information) {
+        return _react2.default.createElement(
+            'div',
+            { className: 'market-symbol-icon' },
+            _react2.default.createElement(
+                'div',
+                { className: 'market-symbol-icon-name' },
+                _react2.default.createElement(_underlyingIcon.UnderlyingIcon, { market: market_information.underlying }),
+                show_description && payload.display_name
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'market-symbol-icon-category' },
+                _react2.default.createElement(_Types.IconTradeType, { type: market_information.category }),
+                show_description && market_information.category
+            )
+        );
+    }
+
+    return _react2.default.createElement(
+        'svg',
+        { width: '32', height: '32', className: 'unknown-icon' },
+        _react2.default.createElement('rect', { width: '32', height: '32' })
+    );
+};
+
+MarketSymbolIconRow.propTypes = {
+    action: _propTypes2.default.string,
+    payload: _propTypes2.default.object,
+    show_description: _propTypes2.default.bool
+};
+
+exports.default = MarketSymbolIconRow;
+
+/***/ }),
+
+/***/ 895:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1173,7 +1140,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _profitLoss = __webpack_require__(860);
+var _profitLoss = __webpack_require__(862);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

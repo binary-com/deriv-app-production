@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contract"],{
 
-/***/ 837:
+/***/ 839:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _contract = __webpack_require__(861);
+var _contract = __webpack_require__(863);
 
 var _contract2 = _interopRequireDefault(_contract);
 
@@ -21,7 +21,31 @@ exports.default = _contract2.default;
 
 /***/ }),
 
-/***/ 848:
+/***/ 850:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _fadeWrapper = __webpack_require__(851);
+
+Object.keys(_fadeWrapper).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _fadeWrapper[key];
+    }
+  });
+});
+
+/***/ }),
+
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,6 +54,7 @@ exports.default = _contract2.default;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.FadeWrapper = undefined;
 
 var _propTypes = __webpack_require__(1);
 
@@ -39,68 +64,50 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _underlyingIcon = __webpack_require__(296);
+var _reactPose = __webpack_require__(179);
 
-var _Types = __webpack_require__(128);
+var _reactPose2 = _interopRequireDefault(_reactPose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var getMarketInformation = function getMarketInformation(payload) {
-    var pattern = new RegExp('^([A-Z]+)_((OTC_[A-Z0-9]+)|R_[\\d]{2,3}|[A-Z]+)_'); // Used to get market name from shortcode
-    var extracted = pattern.exec(payload.shortcode);
-    if (extracted !== null) {
-        return {
-            category: extracted[1].toLowerCase(),
-            underlying: extracted[2]
-        };
+var FadeDiv = _reactPose2.default.div({
+    enter: {
+        opacity: 1,
+        transition: { duration: 300 }
+    },
+    exit: {
+        opacity: 0,
+        transition: { duration: 300 }
     }
-    return null;
-};
+});
 
-var MarketSymbolIconRow = function MarketSymbolIconRow(_ref) {
-    var payload = _ref.payload,
-        show_description = _ref.show_description;
-
-    var should_show_category_icon = typeof payload.shortcode === 'string';
-    var market_information = getMarketInformation(payload);
-
-    if (should_show_category_icon && market_information) {
-        return _react2.default.createElement(
-            'div',
-            { className: 'market-symbol-icon' },
-            _react2.default.createElement(
-                'div',
-                { className: 'market-symbol-icon-name' },
-                _react2.default.createElement(_underlyingIcon.UnderlyingIcon, { market: market_information.underlying }),
-                show_description && payload.display_name
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'market-symbol-icon-category' },
-                _react2.default.createElement(_Types.IconTradeType, { type: market_information.category }),
-                show_description && market_information.category
-            )
-        );
-    }
-
+var FadeWrapper = function FadeWrapper(_ref) {
+    var children = _ref.children,
+        className = _ref.className,
+        keyname = _ref.keyname,
+        is_visible = _ref.is_visible;
     return _react2.default.createElement(
-        'svg',
-        { width: '32', height: '32', className: 'unknown-icon' },
-        _react2.default.createElement('rect', { width: '32', height: '32' })
+        _reactPose.PoseGroup,
+        null,
+        is_visible && _react2.default.createElement(
+            FadeDiv,
+            { className: className, key: keyname },
+            children
+        )
     );
 };
 
-MarketSymbolIconRow.propTypes = {
-    action: _propTypes2.default.string,
-    payload: _propTypes2.default.object,
-    show_description: _propTypes2.default.bool
+FadeWrapper.propTypes = {
+    children: _propTypes2.default.node,
+    is_visible: _propTypes2.default.bool,
+    keyname: _propTypes2.default.string
 };
 
-exports.default = MarketSymbolIconRow;
+exports.FadeWrapper = FadeWrapper;
 
 /***/ }),
 
-/***/ 859:
+/***/ 861:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -137,7 +144,7 @@ exports.default = ContractCard;
 
 /***/ }),
 
-/***/ 861:
+/***/ 863:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -155,15 +162,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactTransitionGroup = __webpack_require__(25);
+var _reactTransitionGroup = __webpack_require__(26);
 
-var _Errors = __webpack_require__(303);
+var _Errors = __webpack_require__(181);
 
 var _Errors2 = _interopRequireDefault(_Errors);
 
 var _connect = __webpack_require__(7);
 
-var _contractReplay = __webpack_require__(862);
+var _contractReplay = __webpack_require__(864);
 
 var _contractReplay2 = _interopRequireDefault(_contractReplay);
 
@@ -177,26 +184,21 @@ var Contract = function Contract(_ref) {
         _react2.default.Fragment,
         null,
         has_error ? _react2.default.createElement(_Errors2.default, { message: error_message }) : _react2.default.createElement(
-            'div',
-            { className: 'trade-container' },
-            _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    _reactTransitionGroup.CSSTransition,
-                    {
-                        'in': !has_error,
-                        timeout: 400,
-                        classNames: {
-                            enter: 'contract--enter',
-                            enterDone: 'contract--enter-done',
-                            exit: 'contract--exit'
-                        },
-                        unmountOnExit: true
-                    },
-                    _react2.default.createElement(_contractReplay2.default, { contract_id: match.params.contract_id, key: match.params.contract_id })
-                )
-            )
+            _reactTransitionGroup.CSSTransition,
+            {
+                'in': !has_error,
+                timeout: 400,
+                classNames: {
+                    enter: 'contract--enter',
+                    enterDone: 'contract--enter-done',
+                    exit: 'contract--exit'
+                },
+                unmountOnExit: true
+            },
+            _react2.default.createElement(_contractReplay2.default, {
+                contract_id: match.params.contract_id,
+                key: match.params.contract_id
+            })
         )
     );
 };
@@ -222,7 +224,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 862:
+/***/ 864:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -231,6 +233,8 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -242,25 +246,37 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ContractDrawer = __webpack_require__(863);
+var _reactRouter = __webpack_require__(38);
+
+var _Animations = __webpack_require__(850);
+
+var _chartLoader = __webpack_require__(300);
+
+var _chartLoader2 = _interopRequireDefault(_chartLoader);
+
+var _ContractDrawer = __webpack_require__(865);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
-var _uiLoader = __webpack_require__(130);
-
-var _uiLoader2 = _interopRequireDefault(_uiLoader);
-
 var _connect = __webpack_require__(7);
 
-var _logic = __webpack_require__(67);
+var _Common = __webpack_require__(11);
 
-var _digits = __webpack_require__(301);
+var _Settings = __webpack_require__(295);
 
-var _digits2 = _interopRequireDefault(_digits);
+var _routes = __webpack_require__(58);
 
-var _infoBox = __webpack_require__(302);
+var _routes2 = _interopRequireDefault(_routes);
+
+var _localize = __webpack_require__(5);
+
+var _infoBox = __webpack_require__(306);
 
 var _infoBox2 = _interopRequireDefault(_infoBox);
+
+var _digits = __webpack_require__(305);
+
+var _digits2 = _interopRequireDefault(_digits);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -274,51 +290,112 @@ var ContractReplay = function (_React$Component) {
     _inherits(ContractReplay, _React$Component);
 
     function ContractReplay() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, ContractReplay);
 
-        return _possibleConstructorReturn(this, (ContractReplay.__proto__ || Object.getPrototypeOf(ContractReplay)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ContractReplay.__proto__ || Object.getPrototypeOf(ContractReplay)).call.apply(_ref, [this].concat(args))), _this), _this.setWrapperRef = function (node) {
+            _this.wrapper_ref = node;
+        }, _this.handleClickOutside = function (event) {
+            if (_this.wrapper_ref && !_this.wrapper_ref.contains(event.target)) {
+                _this.props.history.push(_routes2.default.trade);
+            }
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(ContractReplay, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.props.onMount(this.props.contract_id);
+            this.props.setChartLoader(true);
+            this.props.showBlur();
+            var url_contract_id = /[^/]*$/.exec(location.pathname)[0];
+            this.props.onMount(this.props.contract_id || url_contract_id);
+            document.addEventListener('mousedown', this.handleClickOutside);
         }
     }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
+            this.props.hideBlur();
             this.props.onUnmount();
+            document.removeEventListener('mousedown', this.handleClickOutside);
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var SmartChart = _react2.default.lazy(function () {
-                return Promise.all(/* import() | smart_chart */[__webpack_require__.e("vendors~smart_chart"), __webpack_require__.e("smart_chart")]).then(__webpack_require__.t.bind(null, 836, 7));
+                return Promise.all(/* import() | smart_chart */[__webpack_require__.e("vendors~smart_chart"), __webpack_require__.e("smart_chart")]).then(__webpack_require__.t.bind(null, 838, 7));
             });
-            var status = this.props.contract_info.status;
+
+            var action_bar_items = [{
+                onClick: function onClick() {
+                    return _this2.props.history.push(_routes2.default.trade);
+                },
+                icon: _Settings.IconClose,
+                title: (0, _localize.localize)('Close')
+            }];
+
+            var _props = this.props,
+                config = _props.config,
+                contract_info = _props.contract_info,
+                chart_id = _props.chart_id,
+                is_chart_loading = _props.is_chart_loading;
 
 
-            if (status) {
-                return _react2.default.createElement(
-                    _react2.default.Fragment,
-                    null,
-                    _react2.default.createElement(_ContractDrawer2.default, { contract_info: this.props.contract_info, heading: 'Reports' }),
+            return _react2.default.createElement(
+                'div',
+                { className: 'trade-container__replay', ref: this.setWrapperRef },
+                _react2.default.createElement(
+                    _Animations.FadeWrapper,
+                    {
+                        className: 'contract-drawer-wrapper',
+                        is_visible: !!contract_info.status,
+                        keyname: 'contract-drawer-wrapper'
+                    },
+                    _react2.default.createElement(_ContractDrawer2.default, {
+                        contract_info: contract_info,
+                        heading: 'Reports'
+                    })
+                ),
+                _react2.default.createElement(
+                    _react2.default.Suspense,
+                    { fallback: _react2.default.createElement('div', null) },
                     _react2.default.createElement(
-                        _react2.default.Suspense,
-                        { fallback: _react2.default.createElement(_uiLoader2.default, null) },
-                        _react2.default.createElement(SmartChart, {
-                            chart_id: this.props.chart_id,
-                            is_contract_mode: true,
+                        'div',
+                        { className: 'replay-chart__container' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'vertical-tab__action-bar' },
+                            action_bar_items.map(function (_ref2) {
+                                var icon = _ref2.icon,
+                                    onClick = _ref2.onClick,
+                                    title = _ref2.title;
+                                return _react2.default.createElement(_Common.Icon, {
+                                    className: 'vertical-tab__action-bar--icon',
+                                    key: title,
+                                    icon: icon,
+                                    onClick: onClick
+                                });
+                            })
+                        ),
+                        _react2.default.createElement(_chartLoader2.default, { is_visible: is_chart_loading }),
+                        _react2.default.createElement(SmartChart, _extends({
+                            chart_id: chart_id,
+                            chartControlsWidgets: null,
                             Digits: _react2.default.createElement(_digits2.default, null),
                             InfoBox: _react2.default.createElement(_infoBox2.default, null),
-                            is_ended: (0, _logic.isEnded)(this.props.contract_info),
-                            end_epoch: this.props.contract_info.date_start,
-                            start_epoch: this.props.contract_info.date_expiry
-                        })
+                            should_show_last_digit_stats: false
+                        }, config))
                     )
-                );
-            }
-            return _react2.default.createElement(_uiLoader2.default, null);
+                )
+            );
         }
     }]);
 
@@ -326,27 +403,41 @@ var ContractReplay = function (_React$Component) {
 }(_react2.default.Component);
 
 ContractReplay.propTypes = {
-    chart_id: _propTypes2.default.number,
+    chart_id: _propTypes2.default.string,
+    config: _propTypes2.default.object,
     contract_id: _propTypes2.default.string,
     contract_info: _propTypes2.default.object,
+    hideBlur: _propTypes2.default.func,
+    history: _propTypes2.default.object,
+    is_chart_loading: _propTypes2.default.bool,
+    location: _propTypes2.default.object,
     onMount: _propTypes2.default.func,
     onUnmount: _propTypes2.default.func,
-    symbol: _propTypes2.default.string
+    routes: _propTypes2.default.arrayOf(_propTypes2.default.object),
+    setChartLoader: _propTypes2.default.func,
+    showBlur: _propTypes2.default.func
 };
 
-exports.default = (0, _connect.connect)(function (_ref) {
-    var modules = _ref.modules;
+exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_ref3) {
+    var modules = _ref3.modules,
+        ui = _ref3.ui;
     return {
-        contract_info: modules.contract.contract_info,
-        chart_id: modules.trade.chart_id,
-        onMount: modules.contract.onMount,
-        onUnmount: modules.contract.onUnmount
+        chart_id: modules.smart_chart.replay_id,
+        config: modules.contract.replay_config,
+        onMount: modules.contract.onMountReplay,
+        onUnmount: modules.contract.onUnmountReplay,
+        contract_info: modules.contract.replay_info,
+        setChartLoader: modules.smart_chart.setIsChartLoading,
+        is_chart_loading: modules.smart_chart.is_chart_loading,
+        hideBlur: ui.hideRouteBlur,
+        showBlur: ui.showRouteBlur
+
     };
-})(ContractReplay);
+})(ContractReplay));
 
 /***/ }),
 
-/***/ 863:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -357,11 +448,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ContractCard = exports.default = undefined;
 
-var _contractDrawer = __webpack_require__(864);
+var _contractDrawer = __webpack_require__(866);
 
 var _contractDrawer2 = _interopRequireDefault(_contractDrawer);
 
-var _contractCard = __webpack_require__(859);
+var _contractCard = __webpack_require__(861);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
@@ -372,7 +463,7 @@ exports.ContractCard = _contractCard2.default;
 
 /***/ }),
 
-/***/ 864:
+/***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -396,47 +487,49 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(43);
-
-var _localize = __webpack_require__(47);
-
-var _localize2 = _interopRequireDefault(_localize);
+var _reactRouter = __webpack_require__(38);
 
 var _Common = __webpack_require__(11);
 
-var _routes = __webpack_require__(58);
+var _localize = __webpack_require__(32);
 
-var _routes2 = _interopRequireDefault(_routes);
+var _localize2 = _interopRequireDefault(_localize);
 
-var _profitLossCardContent = __webpack_require__(865);
+var _underlyingIcon = __webpack_require__(297);
+
+var _resultDetails = __webpack_require__(304);
+
+var _resultDetails2 = _interopRequireDefault(_resultDetails);
+
+var _contractTypeCell = __webpack_require__(302);
+
+var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
+
+var _profitLossCardContent = __webpack_require__(867);
 
 var _profitLossCardContent2 = _interopRequireDefault(_profitLossCardContent);
 
-var _marketSymbolIconRow = __webpack_require__(848);
-
-var _marketSymbolIconRow2 = _interopRequireDefault(_marketSymbolIconRow);
-
-var _contractCardBody = __webpack_require__(866);
+var _contractCardBody = __webpack_require__(868);
 
 var _contractCardBody2 = _interopRequireDefault(_contractCardBody);
 
-var _contractCardFooter = __webpack_require__(867);
+var _contractCardFooter = __webpack_require__(869);
 
 var _contractCardFooter2 = _interopRequireDefault(_contractCardFooter);
 
-var _contractCardHeader = __webpack_require__(868);
+var _contractCardHeader = __webpack_require__(870);
 
 var _contractCardHeader2 = _interopRequireDefault(_contractCardHeader);
 
-var _contractCard = __webpack_require__(859);
+var _contractCard = __webpack_require__(861);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
-var _contractAudit = __webpack_require__(869);
+var _details = __webpack_require__(298);
 
-var _contractAudit2 = _interopRequireDefault(_contractAudit);
+var _logic = __webpack_require__(91);
 
-var _money = __webpack_require__(83);
+var _money = __webpack_require__(68);
 
 var _money2 = _interopRequireDefault(_money);
 
@@ -452,9 +545,21 @@ var ContractDrawer = function (_Component) {
     _inherits(ContractDrawer, _Component);
 
     function ContractDrawer() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, ContractDrawer);
 
-        return _possibleConstructorReturn(this, (ContractDrawer.__proto__ || Object.getPrototypeOf(ContractDrawer)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ContractDrawer.__proto__ || Object.getPrototypeOf(ContractDrawer)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            is_shade_on: false
+        }, _this.handleShade = function (shade) {
+            _this.setState({ is_shade_on: shade });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(ContractDrawer, [{
@@ -463,20 +568,40 @@ var ContractDrawer = function (_Component) {
             var _props$contract_info = this.props.contract_info,
                 buy_price = _props$contract_info.buy_price,
                 currency = _props$contract_info.currency,
+                exit_tick = _props$contract_info.exit_tick,
+                is_sold = _props$contract_info.is_sold,
                 payout = _props$contract_info.payout,
                 profit = _props$contract_info.profit;
+            var contract_info = this.props.contract_info;
 
+            var exit_spot = (0, _logic.isUserSold)(contract_info) ? '-' : exit_tick;
 
             return _react2.default.createElement(
                 _contractCard2.default,
-                { contract_info: this.props.contract_info },
+                { contract_info: contract_info },
                 _react2.default.createElement(
                     _contractCardHeader2.default,
                     null,
-                    _react2.default.createElement(_marketSymbolIconRow2.default, {
-                        show_description: true,
-                        payload: this.props.contract_info
-                    })
+                    _react2.default.createElement(
+                        'div',
+                        { className: (0, _classnames2.default)('contract-card__grid', 'contract-card__grid-underlying-trade')
+                        },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'contract-card__underlying-name' },
+                            _react2.default.createElement(_underlyingIcon.UnderlyingIcon, { market: contract_info.underlying }),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'contract-card__symbol' },
+                                contract_info.display_name
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'contract-card__type' },
+                            _react2.default.createElement(_contractTypeCell2.default, { type: contract_info.contract_type })
+                        )
+                    )
                 ),
                 _react2.default.createElement(
                     _contractCardBody2.default,
@@ -504,7 +629,15 @@ var ContractDrawer = function (_Component) {
                             })
                         )
                     ),
-                    _react2.default.createElement(_contractAudit2.default, { contract: this.props.contract_info })
+                    _react2.default.createElement(_resultDetails2.default, {
+                        contract_info: contract_info,
+                        contract_end_time: (0, _logic.getEndTime)(contract_info),
+                        is_shade_visible: this.handleShade,
+                        duration: (0, _details.getDurationTime)(contract_info),
+                        duration_unit: (0, _details.getDurationUnitText)((0, _details.getDurationPeriod)(contract_info)),
+                        exit_spot: exit_spot,
+                        has_result: !!is_sold
+                    })
                 )
             );
         }
@@ -513,6 +646,7 @@ var ContractDrawer = function (_Component) {
         value: function render() {
             var _this2 = this;
 
+            if (!this.props.contract_info) return null;
             var body_content = this.getBodyContent();
             return _react2.default.createElement(
                 'div',
@@ -522,7 +656,7 @@ var ContractDrawer = function (_Component) {
                     {
                         className: 'contract-drawer__heading',
                         onClick: function onClick() {
-                            return _this2.props.history.push(_routes2.default.reports);
+                            return _this2.props.history.goBack();
                         }
                     },
                     _react2.default.createElement(_Common.Icon, { icon: _Common.IconBack }),
@@ -553,7 +687,7 @@ exports.default = (0, _reactRouter.withRouter)(ContractDrawer);
 
 /***/ }),
 
-/***/ 865:
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -575,11 +709,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _localize = __webpack_require__(47);
+var _localize = __webpack_require__(32);
 
 var _localize2 = _interopRequireDefault(_localize);
 
-var _money = __webpack_require__(83);
+var _money = __webpack_require__(68);
 
 var _money2 = _interopRequireDefault(_money);
 
@@ -636,7 +770,7 @@ exports.default = ProfitLossCardContent;
 
 /***/ }),
 
-/***/ 866:
+/***/ 868:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -673,7 +807,7 @@ exports.default = ContractCardBody;
 
 /***/ }),
 
-/***/ 867:
+/***/ 869:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -710,7 +844,7 @@ exports.default = ContractCardFooter;
 
 /***/ }),
 
-/***/ 868:
+/***/ 870:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -744,188 +878,6 @@ ContractCardHeader.propTypes = {
 };
 
 exports.default = ContractCardHeader;
-
-/***/ }),
-
-/***/ 869:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _classnames = __webpack_require__(3);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _moment = __webpack_require__(26);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _localize = __webpack_require__(47);
-
-var _localize2 = _interopRequireDefault(_localize);
-
-var _Common = __webpack_require__(11);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Pair = function Pair(_ref) {
-    var value = _ref.value,
-        label = _ref.label;
-    return _react2.default.createElement(
-        'div',
-        { className: 'pair' },
-        _react2.default.createElement(
-            'div',
-            { className: 'pair__label' },
-            _react2.default.createElement(_localize2.default, { str: label })
-        ),
-        _react2.default.createElement(
-            'div',
-            { className: 'pair__value' },
-            value
-        )
-    );
-};
-
-var ContractAudit = function (_Component) {
-    _inherits(ContractAudit, _Component);
-
-    function ContractAudit(props) {
-        _classCallCheck(this, ContractAudit);
-
-        var _this = _possibleConstructorReturn(this, (ContractAudit.__proto__ || Object.getPrototypeOf(ContractAudit)).call(this, props));
-
-        _this.state = {
-            is_visible: false
-        };
-        return _this;
-    }
-
-    _createClass(ContractAudit, [{
-        key: 'toggleVisibility',
-        value: function toggleVisibility() {
-            this.setState({
-                is_visible: !this.state.is_visible
-            });
-        }
-    }, {
-        key: 'getDuration',
-        value: function getDuration() {
-            var _props$contract = this.props.contract,
-                tick_count = _props$contract.tick_count,
-                date_start = _props$contract.date_start,
-                date_expiry = _props$contract.date_expiry;
-
-
-            var is_tick_contract = !!tick_count;
-            if (is_tick_contract) {
-                return tick_count + ' tick' + (tick_count > 1 ? 's' : '');
-            }
-
-            var start_time = (0, _moment2.default)(date_start * 1000);
-            var end_time = (0, _moment2.default)(date_expiry * 1000);
-            var duration = _moment2.default.duration(end_time.diff(start_time));
-
-            return _moment2.default.utc(duration.as('milliseconds')).format('HH:mm:ss');
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _props$contract2 = this.props.contract,
-                barrier = _props$contract2.barrier,
-                transaction_ids = _props$contract2.transaction_ids,
-                entry_tick = _props$contract2.entry_tick,
-                exit_tick = _props$contract2.exit_tick,
-                entry_tick_time = _props$contract2.entry_tick_time,
-                exit_tick_time = _props$contract2.exit_tick_time;
-
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'contract-audit' },
-                _react2.default.createElement(
-                    'div',
-                    {
-                        className: 'contract-audit__toggle',
-                        onClick: this.toggleVisibility.bind(this)
-                    },
-                    _react2.default.createElement(_Common.Icon, {
-                        icon: _Common.IconArrowBold,
-                        className: (0, _classnames2.default)('contract-audit__arrow', {
-                            'contract-audit__arrow--is-open': this.state.is_visible
-                        })
-                    })
-                ),
-                _react2.default.createElement(
-                    'div',
-                    {
-                        className: (0, _classnames2.default)('contract-audit__details', {
-                            'contract-audit__details--is-expanded': this.state.is_visible,
-                            'contract-audit__details--is-hidden': !this.state.is_visible
-                        })
-                    },
-                    _react2.default.createElement('div', { className: 'border' }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'pairs' },
-                        _react2.default.createElement(Pair, { label: 'Ref. ID (Buy)', value: transaction_ids.buy }),
-                        _react2.default.createElement(Pair, { label: 'Ref. ID (Sell)', value: transaction_ids.sell })
-                    ),
-                    _react2.default.createElement('div', { className: 'border' }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'pairs' },
-                        _react2.default.createElement(Pair, { label: 'Duration', value: this.getDuration() }),
-                        _react2.default.createElement(Pair, { label: 'Barrier', value: barrier })
-                    ),
-                    _react2.default.createElement('div', { className: 'border' }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'pairs' },
-                        _react2.default.createElement(Pair, { label: 'Entry Spot', value: entry_tick }),
-                        _react2.default.createElement(Pair, { label: 'Exit Spot', value: exit_tick })
-                    ),
-                    _react2.default.createElement('div', { className: 'border' }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'pairs' },
-                        _react2.default.createElement(Pair, { label: 'Start Time', value: entry_tick_time }),
-                        _react2.default.createElement(Pair, { label: 'End Time', value: exit_tick_time })
-                    )
-                )
-            );
-        }
-    }]);
-
-    return ContractAudit;
-}(_react.Component);
-
-ContractAudit.propTypes = {
-    contract: _propTypes2.default.object
-};
-
-exports.default = ContractAudit;
 
 /***/ })
 
