@@ -153,7 +153,7 @@ exports.default = (0, _connect.connect)(function (_ref) {
         is_loading: modules.portfolio.is_loading,
         onMount: modules.portfolio.onMount,
         onUnmount: modules.portfolio.onUnmount,
-        totals: modules.portfolio.totals
+        totals: modules.portfolio.active_positions_totals
     };
 })((0, _reactRouterDom.withRouter)(OpenPositions));
 

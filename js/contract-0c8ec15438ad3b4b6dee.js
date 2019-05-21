@@ -570,12 +570,11 @@ var ContractDrawer = function (_Component) {
                 currency = _props$contract_info.currency,
                 exit_tick = _props$contract_info.exit_tick,
                 is_sold = _props$contract_info.is_sold,
-                payout = _props$contract_info.payout,
-                profit = _props$contract_info.profit;
+                profit = _props$contract_info.profit,
+                sell_price = _props$contract_info.sell_price;
             var contract_info = this.props.contract_info;
 
             var exit_spot = (0, _logic.isUserSold)(contract_info) ? '-' : exit_tick;
-
             return _react2.default.createElement(
                 _contractCard2.default,
                 { contract_info: contract_info },
@@ -608,7 +607,7 @@ var ContractDrawer = function (_Component) {
                     null,
                     _react2.default.createElement(_profitLossCardContent2.default, {
                         pl_value: +profit,
-                        payout: +payout,
+                        payout: +sell_price,
                         currency: currency
                     })
                 ),
