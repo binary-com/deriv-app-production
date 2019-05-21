@@ -1419,19 +1419,6 @@ html {
     -ms-flex-item-align: center;
         align-self: center;
     height: 100%; }
-    .header__navbar-icons--deriv-logo {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      padding-right: 0.8em; }
     .header__navbar-icons--notify-toggle {
       -webkit-box-ordinal-group: 3;
           -ms-flex-order: 2;
@@ -1500,9 +1487,11 @@ html {
       text-transform: capitalize;
       text-align: left;
       line-height: 1.75;
-      padding: 0.5em 0.5em 0.5em 0;
+      padding: 0.5em 0;
       position: relative; }
       .theme--light .header__menu-link-text {
+        /* postcss-bem-linter: ignore */
+        /* postcss-bem-linter: ignore */
         /* postcss-bem-linter: ignore */
         /* postcss-bem-linter: ignore */
         /* postcss-bem-linter: ignore */
@@ -1516,7 +1505,13 @@ html {
           fill: none; }
         .theme--light .header__menu-link-text .color2-stroke {
           stroke: none; }
+        .theme--light .header__menu-link-text .color3-fill {
+          fill: rgba(0, 0, 0, 0.8); }
+        .theme--light .header__menu-link-text .color3-stroke {
+          stroke: rgba(0, 0, 0, 0.8); }
       .theme--dark .header__menu-link-text {
+        /* postcss-bem-linter: ignore */
+        /* postcss-bem-linter: ignore */
         /* postcss-bem-linter: ignore */
         /* postcss-bem-linter: ignore */
         /* postcss-bem-linter: ignore */
@@ -1530,6 +1525,10 @@ html {
           fill: none; }
         .theme--dark .header__menu-link-text .color2-stroke {
           stroke: none; }
+        .theme--dark .header__menu-link-text .color3-fill {
+          fill: #7f8397; }
+        .theme--dark .header__menu-link-text .color3-stroke {
+          stroke: #7f8397; }
       .header__menu-link-text:before {
         position: absolute;
         top: 1.4em;
@@ -1564,11 +1563,11 @@ html {
     font-weight: normal;
     height: 20px;
     line-height: 1.43;
-    margin-left: 0.8rem;
     text-align: center;
     width: 50px; }
   .header__icon {
-    margin-right: 0.8em; }
+    margin-right: 0.8rem;
+    vertical-align: middle; }
 
 /** @define footer */
 .footer {
