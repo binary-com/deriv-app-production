@@ -1461,7 +1461,7 @@ html {
     height: 100%;
     -ms-flex-item-align: center;
         align-self: center; }
-    @media (max-width: 980px) {
+    @media (max-width: 520px) {
       .header__menu-links {
         display: none; } }
   .header__menu-link {
@@ -8638,6 +8638,12 @@ html {
     background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(10%, #ffffff), to(rgba(255, 255, 255, 0)));
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff 10%, rgba(255, 255, 255, 0));
     opacity: 0.32; }
+
+.app-contents--contract-mode .trade-container .popover, .app-contents--is-blurred .trade-container .popover {
+  display: none; }
+
+.app-contents--contract-mode .trade-container .tooltip:before, .app-contents--contract-mode .trade-container .tooltip:after, .app-contents--is-blurred .trade-container .tooltip:before, .app-contents--is-blurred .trade-container .tooltip:after {
+  display: none; }
 
 /** @define trade-container */
 .theme--light .trade-container {
