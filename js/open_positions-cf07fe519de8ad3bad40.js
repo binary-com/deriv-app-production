@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["profit_table"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["open_positions"],{
 
-/***/ 844:
+/***/ 839:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12,39 +12,37 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _mobxReact = __webpack_require__(12);
+
 var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _mobxReact = __webpack_require__(12);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(38);
+var _reactRouterDom = __webpack_require__(57);
 
 var _localize = __webpack_require__(5);
 
-var _DataTable = __webpack_require__(848);
+var _DataTable = __webpack_require__(844);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
-var _helpers = __webpack_require__(178);
-
-var _connect = __webpack_require__(7);
-
-var _emptyTradeHistoryMessage = __webpack_require__(857);
+var _emptyTradeHistoryMessage = __webpack_require__(853);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
-var _placeholderComponent = __webpack_require__(860);
+var _reportsMeta = __webpack_require__(854);
+
+var _dataTableConstants = __webpack_require__(855);
+
+var _placeholderComponent = __webpack_require__(856);
 
 var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
-var _reportsMeta = __webpack_require__(858);
-
-var _dataTableConstants = __webpack_require__(859);
+var _connect = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53,18 +51,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import { getContractPath }                 from 'App/Components/Routes/helpers';
 
-// TODO Add proper messages before the PR
-var ProfitTable = function (_React$Component) {
-    _inherits(ProfitTable, _React$Component);
 
-    function ProfitTable() {
-        _classCallCheck(this, ProfitTable);
+var OpenPositions = function (_React$Component) {
+    _inherits(OpenPositions, _React$Component);
 
-        return _possibleConstructorReturn(this, (ProfitTable.__proto__ || Object.getPrototypeOf(ProfitTable)).apply(this, arguments));
+    function OpenPositions() {
+        _classCallCheck(this, OpenPositions);
+
+        return _possibleConstructorReturn(this, (OpenPositions.__proto__ || Object.getPrototypeOf(OpenPositions)).apply(this, arguments));
     }
 
-    _createClass(ProfitTable, [{
+    _createClass(OpenPositions, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.props.onMount();
@@ -78,50 +77,44 @@ var ProfitTable = function (_React$Component) {
         key: 'render',
         value: function render() {
             var _props = this.props,
+                active_positions = _props.active_positions,
                 component_icon = _props.component_icon,
-                data = _props.data,
-                is_empty = _props.is_empty,
                 is_loading = _props.is_loading,
                 error = _props.error,
-                handleScroll = _props.handleScroll,
-                has_selected_date = _props.has_selected_date,
+                is_empty = _props.is_empty,
+                currency = _props.currency,
                 totals = _props.totals;
 
-            if (error) return _react2.default.createElement(
-                'p',
-                null,
-                error
-            );
 
-            var columns = (0, _dataTableConstants.getProfitTableColumnsTemplate)();
+            if (error) {
+                return _react2.default.createElement(
+                    'p',
+                    null,
+                    error
+                );
+            }
 
             return _react2.default.createElement(
                 _react2.default.Fragment,
                 null,
                 _react2.default.createElement(_reportsMeta.ReportsMeta, {
-                    i18n_heading: (0, _localize.localize)('Profit table'),
-                    i18n_message: (0, _localize.localize)('View all trades purchased on your account, and a summary of your total profit/loss.')
+                    i18n_heading: (0, _localize.localize)('Open positions'),
+                    i18n_message: (0, _localize.localize)('View all active trades on your account that can still incur a profit or a loss.')
                 }),
-                is_loading && data.length === 0 || is_empty ? _react2.default.createElement(_placeholderComponent2.default, {
-                    is_loading: is_loading,
-                    has_selected_date: has_selected_date,
+                is_loading && active_positions.length === 0 || is_empty ? _react2.default.createElement(_placeholderComponent2.default, {
+                    is_loading: is_loading || !active_positions,
                     is_empty: is_empty,
                     empty_message_component: _emptyTradeHistoryMessage2.default,
                     component_icon: component_icon,
-                    localized_message: (0, _localize.localize)('You have no trading activity yet.'),
-                    localized_period_message: (0, _localize.localize)('You have no trading activity for this period.')
-                }) : _react2.default.createElement(
+                    localized_message: (0, _localize.localize)('You have no open positions yet.')
+                }) : currency && active_positions.length > 0 && _react2.default.createElement(
                     _DataTable2.default,
                     {
-                        className: 'profit-table',
-                        data_source: data,
-                        columns: columns,
-                        onScroll: handleScroll,
+                        className: 'open-positions',
+                        columns: (0, _dataTableConstants.getOpenPositionsColumnsTemplate)(currency),
                         footer: totals,
-                        is_empty: is_empty,
-                        getRowAction: function getRowAction(row_obj) {
-                            return (0, _helpers.getContractPath)(row_obj.contract_id);
-                        }
+                        data_source: active_positions
+                        // getRowAction={(row_obj) => getContractPath(row_obj.id)}
                     },
                     _react2.default.createElement(_placeholderComponent2.default, {
                         is_loading: is_loading
@@ -131,37 +124,38 @@ var ProfitTable = function (_React$Component) {
         }
     }]);
 
-    return ProfitTable;
+    return OpenPositions;
 }(_react2.default.Component);
 
-ProfitTable.propTypes = {
+OpenPositions.propTypes = {
+    active_positions: _mobxReact.PropTypes.arrayOrObservableArray,
     component_icon: _propTypes2.default.func,
-    data: _mobxReact.PropTypes.arrayOrObservableArray,
+    currency: _propTypes2.default.string,
     error: _propTypes2.default.string,
-    handleScroll: _propTypes2.default.func,
-    has_selected_date: _propTypes2.default.bool,
     history: _propTypes2.default.object,
     is_empty: _propTypes2.default.bool,
     is_loading: _propTypes2.default.bool,
+    is_mobile: _propTypes2.default.bool,
+    is_tablet: _propTypes2.default.bool,
     onMount: _propTypes2.default.func,
     onUnmount: _propTypes2.default.func,
     totals: _propTypes2.default.object
 };
 
 exports.default = (0, _connect.connect)(function (_ref) {
-    var modules = _ref.modules;
+    var modules = _ref.modules,
+        client = _ref.client;
     return {
-        data: modules.profit_table.data,
-        error: modules.profit_table.error,
-        handleScroll: modules.profit_table.handleScroll,
-        has_selected_date: modules.profit_table.has_selected_date,
-        is_empty: modules.profit_table.is_empty,
-        is_loading: modules.profit_table.is_loading,
-        onMount: modules.profit_table.onMount,
-        onUnmount: modules.profit_table.onUnmount,
-        totals: modules.profit_table.totals
+        currency: client.currency,
+        active_positions: modules.portfolio.active_positions,
+        error: modules.portfolio.error,
+        is_empty: modules.portfolio.is_active_empty,
+        is_loading: modules.portfolio.is_loading,
+        onMount: modules.portfolio.onMount,
+        onUnmount: modules.portfolio.onUnmount,
+        totals: modules.portfolio.active_positions_totals
     };
-})((0, _reactRouter.withRouter)(ProfitTable));
+})((0, _reactRouterDom.withRouter)(OpenPositions));
 
 /***/ })
 

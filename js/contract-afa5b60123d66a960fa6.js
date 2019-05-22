@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contract"],{
 
-/***/ 839:
+/***/ 835:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _contract = __webpack_require__(863);
+var _contract = __webpack_require__(859);
 
 var _contract2 = _interopRequireDefault(_contract);
 
@@ -21,7 +21,7 @@ exports.default = _contract2.default;
 
 /***/ }),
 
-/***/ 850:
+/***/ 846:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _fadeWrapper = __webpack_require__(851);
+var _fadeWrapper = __webpack_require__(847);
 
 Object.keys(_fadeWrapper).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -45,7 +45,7 @@ Object.keys(_fadeWrapper).forEach(function (key) {
 
 /***/ }),
 
-/***/ 851:
+/***/ 847:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -107,7 +107,7 @@ exports.FadeWrapper = FadeWrapper;
 
 /***/ }),
 
-/***/ 861:
+/***/ 857:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -144,7 +144,7 @@ exports.default = ContractCard;
 
 /***/ }),
 
-/***/ 863:
+/***/ 859:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -170,7 +170,7 @@ var _Errors2 = _interopRequireDefault(_Errors);
 
 var _connect = __webpack_require__(7);
 
-var _contractReplay = __webpack_require__(864);
+var _contractReplay = __webpack_require__(860);
 
 var _contractReplay2 = _interopRequireDefault(_contractReplay);
 
@@ -224,7 +224,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 864:
+/***/ 860:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,13 +248,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(38);
 
-var _Animations = __webpack_require__(850);
+var _Animations = __webpack_require__(846);
 
 var _chartLoader = __webpack_require__(300);
 
 var _chartLoader2 = _interopRequireDefault(_chartLoader);
 
-var _ContractDrawer = __webpack_require__(865);
+var _ContractDrawer = __webpack_require__(861);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
@@ -331,7 +331,7 @@ var ContractReplay = function (_React$Component) {
             var _this2 = this;
 
             var SmartChart = _react2.default.lazy(function () {
-                return Promise.all(/* import() | smart_chart */[__webpack_require__.e("vendors~smart_chart"), __webpack_require__.e("smart_chart")]).then(__webpack_require__.t.bind(null, 838, 7));
+                return Promise.all(/* import() | smart_chart */[__webpack_require__.e("vendors~smart_chart"), __webpack_require__.e("smart_chart")]).then(__webpack_require__.t.bind(null, 834, 7));
             });
 
             var action_bar_items = [{
@@ -437,7 +437,7 @@ exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_
 
 /***/ }),
 
-/***/ 865:
+/***/ 861:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -448,11 +448,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ContractCard = exports.default = undefined;
 
-var _contractDrawer = __webpack_require__(866);
+var _contractDrawer = __webpack_require__(862);
 
 var _contractDrawer2 = _interopRequireDefault(_contractDrawer);
 
-var _contractCard = __webpack_require__(861);
+var _contractCard = __webpack_require__(857);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
@@ -463,7 +463,7 @@ exports.ContractCard = _contractCard2.default;
 
 /***/ }),
 
-/***/ 866:
+/***/ 862:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -505,23 +505,23 @@ var _contractTypeCell = __webpack_require__(302);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
-var _profitLossCardContent = __webpack_require__(867);
+var _profitLossCardContent = __webpack_require__(863);
 
 var _profitLossCardContent2 = _interopRequireDefault(_profitLossCardContent);
 
-var _contractCardBody = __webpack_require__(868);
+var _contractCardBody = __webpack_require__(864);
 
 var _contractCardBody2 = _interopRequireDefault(_contractCardBody);
 
-var _contractCardFooter = __webpack_require__(869);
+var _contractCardFooter = __webpack_require__(865);
 
 var _contractCardFooter2 = _interopRequireDefault(_contractCardFooter);
 
-var _contractCardHeader = __webpack_require__(870);
+var _contractCardHeader = __webpack_require__(866);
 
 var _contractCardHeader2 = _interopRequireDefault(_contractCardHeader);
 
-var _contractCard = __webpack_require__(861);
+var _contractCard = __webpack_require__(857);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
@@ -686,7 +686,7 @@ exports.default = (0, _reactRouter.withRouter)(ContractDrawer);
 
 /***/ }),
 
-/***/ 867:
+/***/ 863:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -769,7 +769,7 @@ exports.default = ProfitLossCardContent;
 
 /***/ }),
 
-/***/ 868:
+/***/ 864:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -806,7 +806,7 @@ exports.default = ContractCardBody;
 
 /***/ }),
 
-/***/ 869:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -843,7 +843,7 @@ exports.default = ContractCardFooter;
 
 /***/ }),
 
-/***/ 870:
+/***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

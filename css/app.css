@@ -1108,9 +1108,6 @@ html {
       .chart-container .cq-context div.ciq-chart div.cq-chart-controls {
         -webkit-box-shadow: none;
                 box-shadow: none; }
-      .chart-container .cq-context div.ciq-chart div.ciq-asset-information {
-        z-index: 0;
-        display: none; }
       .chart-container .cq-context div.ciq-chart div.stx_jump_today.home > svg {
         top: 6px;
         left: 8px;
@@ -2120,7 +2117,9 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 56px;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 4px;
     cursor: pointer;
     font-size: 1.6em;
     color: rgba(0, 0, 0, 0.8);
@@ -2132,6 +2131,10 @@ html {
       color: rgba(0, 0, 0, 0.8); }
     .theme--dark .contract-drawer__heading {
       color: #7f8397; }
+    .theme--light .contract-drawer__heading:hover {
+      background: rgba(0, 0, 0, 0.04); }
+    .theme--dark .contract-drawer__heading:hover {
+      background: #202641; }
   .contract-drawer__icon {
     margin-right: 16px; }
 
@@ -2369,6 +2372,10 @@ html {
       .theme--dark .positions-drawer__footer .btn {
         background-color: #2a3052;
         border-color: #2a3052; }
+      .theme--light .positions-drawer__footer .btn:hover {
+        background-color: rgba(0, 0, 0, 0.04); }
+      .theme--dark .positions-drawer__footer .btn:hover {
+        background-color: #202641; }
       .positions-drawer__footer .btn .btn__text {
         font-size: 1.2em;
         font-weight: bold; }
@@ -3223,11 +3230,11 @@ html {
     .theme--light .button-menu__button {
       background-color: #ffffff; }
       .theme--light .button-menu__button:hover:not(.button-menu__button--active) {
-        background-color: rgba(0, 0, 0, 0.04); }
+        background-color: rgba(0, 0, 0, 0.08); }
     .theme--dark .button-menu__button {
       background-color: #101320; }
       .theme--dark .button-menu__button:hover:not(.button-menu__button--active) {
-        background-color: #202641; }
+        background-color: rgba(32, 38, 65, 0.08); }
     .button-menu__button span {
       font-size: 1.4em;
       color: rgba(0, 0, 0, 0.8);
@@ -3265,7 +3272,6 @@ html {
     .theme--dark .button-menu__wrapper {
       background-color: #101320; }
     .button-menu__wrapper .button-menu__button, .button-menu__wrapper .button-menu__button--active {
-      background-color: rgba(0, 0, 0, 0) !important;
       z-index: 1; }
     .button-menu__wrapper .button-menu__button:nth-last-child(2) {
       border-top-right-radius: 4px;

@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["api_token"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["financial_assessment"],{
 
-/***/ 830:
+/***/ 829:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18,28 +18,28 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(847);
+var _section = __webpack_require__(843);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ApiToken = function ApiToken(_ref) {
+var FinancialAssessment = function FinancialAssessment(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-ApiToken.propTypes = {
+FinancialAssessment.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = ApiToken;
+exports.default = FinancialAssessment;
 
 /***/ }),
 
-/***/ 847:
+/***/ 843:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
