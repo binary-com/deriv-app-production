@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["smart_chart"],{
 
-/***/ 834:
+/***/ 836:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _smartChart = __webpack_require__(893);
+var _smartChart = __webpack_require__(895);
 
 var _smartChart2 = _interopRequireDefault(_smartChart);
 
@@ -21,7 +21,7 @@ exports.default = _smartChart2.default;
 
 /***/ }),
 
-/***/ 893:
+/***/ 895:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33,7 +33,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _smartchartsBeta = __webpack_require__(845);
+var _smartchartsBeta = __webpack_require__(847);
 
 var _propTypes = __webpack_require__(1);
 
@@ -47,23 +47,23 @@ var _url = __webpack_require__(39);
 
 var _connect = __webpack_require__(7);
 
-var _bottomWidgets = __webpack_require__(894);
+var _bottomWidgets = __webpack_require__(896);
 
 var _bottomWidgets2 = _interopRequireDefault(_bottomWidgets);
 
-var _controlWidgets = __webpack_require__(895);
+var _controlWidgets = __webpack_require__(897);
 
 var _controlWidgets2 = _interopRequireDefault(_controlWidgets);
 
-var _marker = __webpack_require__(896);
+var _marker = __webpack_require__(898);
 
 var _marker2 = _interopRequireDefault(_marker);
 
-var _topWidgets = __webpack_require__(897);
+var _topWidgets = __webpack_require__(899);
 
 var _topWidgets2 = _interopRequireDefault(_topWidgets);
 
-var _symbol = __webpack_require__(898);
+var _symbol = __webpack_require__(900);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -127,6 +127,7 @@ var Chart = function (_React$Component) {
                     chartStatusListener: this.props.getChartStatus,
                     chartType: this.props.chart_type,
                     endEpoch: this.props.end_epoch,
+                    margin: this.props.margin || null,
                     id: this.props.chart_id,
                     isMobile: this.props.is_mobile,
                     granularity: this.props.granularity,
@@ -176,6 +177,7 @@ Chart.propTypes = {
     is_static_chart: _propTypes2.default.bool,
     is_title_enabled: _propTypes2.default.bool,
     is_trade_page: _propTypes2.default.bool,
+    margin: _propTypes2.default.number,
     markers_array: _propTypes2.default.array,
     onMount: _propTypes2.default.func,
     onSymbolChange: _propTypes2.default.func,
@@ -210,6 +212,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         is_contract_mode: modules.smart_chart.is_contract_mode,
         is_title_enabled: modules.smart_chart.is_title_enabled,
         is_static_chart: modules.smart_chart.is_static_chart,
+        margin: modules.smart_chart.margin,
         markers_array: modules.smart_chart.markers_array,
         onMount: modules.smart_chart.onMount,
         onUnmount: modules.smart_chart.onUnmount,
@@ -229,7 +232,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 894:
+/***/ 896:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -266,7 +269,7 @@ exports.default = BottomWidgets;
 
 /***/ }),
 
-/***/ 895:
+/***/ 897:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -276,7 +279,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _smartchartsBeta = __webpack_require__(845);
+var _smartchartsBeta = __webpack_require__(847);
 
 var _propTypes = __webpack_require__(1);
 
@@ -315,7 +318,7 @@ exports.default = ControlWidgets;
 
 /***/ }),
 
-/***/ 896:
+/***/ 898:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -325,7 +328,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _smartchartsBeta = __webpack_require__(845);
+var _smartchartsBeta = __webpack_require__(847);
 
 var _mobx = __webpack_require__(4);
 
@@ -366,7 +369,7 @@ exports.default = (0, _mobxReact.observer)(ChartMarker);
 
 /***/ }),
 
-/***/ 897:
+/***/ 899:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -376,7 +379,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _smartchartsBeta = __webpack_require__(845);
+var _smartchartsBeta = __webpack_require__(847);
 
 var _propTypes = __webpack_require__(1);
 
@@ -412,7 +415,7 @@ exports.default = TopWidgets;
 
 /***/ }),
 
-/***/ 898:
+/***/ 900:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
