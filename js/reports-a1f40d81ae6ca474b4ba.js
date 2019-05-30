@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _reports = __webpack_require__(887);
+var _reports = __webpack_require__(888);
 
 var _reports2 = _interopRequireDefault(_reports);
 
@@ -64,14 +64,47 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactPose = __webpack_require__(179);
+var _reactPose = __webpack_require__(180);
 
 var _reactPose2 = _interopRequireDefault(_reactPose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FadeDiv = _reactPose2.default.div({
+var FadeInFromTopDiv = _reactPose2.default.div({
     enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: -50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInFromBottomDiv = _reactPose2.default.div({
+    enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: 50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInOnlyDiv = _reactPose2.default.div({
+    enter: {
+
         opacity: 1,
         transition: { duration: 300 }
     },
@@ -85,12 +118,36 @@ var FadeWrapper = function FadeWrapper(_ref) {
     var children = _ref.children,
         className = _ref.className,
         keyname = _ref.keyname,
-        is_visible = _ref.is_visible;
+        is_visible = _ref.is_visible,
+        type = _ref.type;
+
+    if (type === 'top') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromTopDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
+    if (type === 'bottom') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromBottomDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
     return _react2.default.createElement(
         _reactPose.PoseGroup,
         null,
         is_visible && _react2.default.createElement(
-            FadeDiv,
+            FadeInOnlyDiv,
             { className: className, key: keyname },
             children
         )
@@ -100,14 +157,15 @@ var FadeWrapper = function FadeWrapper(_ref) {
 FadeWrapper.propTypes = {
     children: _propTypes2.default.node,
     is_visible: _propTypes2.default.bool,
-    keyname: _propTypes2.default.string
+    keyname: _propTypes2.default.string,
+    type: _propTypes2.default.string
 };
 
 exports.FadeWrapper = FadeWrapper;
 
 /***/ }),
 
-/***/ 887:
+/***/ 888:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -179,6 +237,10 @@ var Reports = function (_React$Component) {
     _createClass(Reports, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            // SmartCharts keeps saving layout for ContractPlay even if layouts prop is set to null
+            // As a result, we have to remove it manually for each SmartChart instance in ContractReplay
+            // TODO: Remove this once SmartCharts finds a way to stop ChartIQ from saving layouts to localStorage
+            localStorage.removeItem('layout-contract-replay');
             this.props.showBlur();
             document.addEventListener('mousedown', this.handleClickOutside);
             this.setState({ is_visible: true });

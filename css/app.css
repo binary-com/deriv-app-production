@@ -918,10 +918,20 @@ html {
     background-color: #f4f4f6; }
   .theme--dark .initial-loader {
     background-color: #101320; }
-  .theme--light .initial-loader__barspinner--rect {
+  .initial-loader__barspinner--rect {
     background-color: #21ce99; }
-  .theme--dark .initial-loader__barspinner--rect {
-    background-color: #21ce99; }
+  .initial-loader__text {
+    line-height: 44px;
+    font-size: 1.4em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5; }
+    .theme--light .initial-loader__text {
+      color: rgba(0, 0, 0, 0.8); }
+    .theme--dark .initial-loader__text {
+      color: #ffffff; }
 
 /** @define app-contents; weak */
 .app-contents {
@@ -2161,12 +2171,30 @@ html {
   position: relative;
   border-radius: 4px;
   padding: 4px; }
+  .contract-card .progress-slider--completed {
+    margin: 4px 0; }
+  .contract-card:before {
+    content: '';
+    position: absolute;
+    height: 52px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 4px; }
+  .contract-card--green:before {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(16, 19, 32, 0)), to(rgba(0, 148, 117, 0.16)));
+    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16)); }
+  .contract-card--red:before {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(16, 19, 32, 0)), to(rgba(227, 28, 75, 0.16)));
+    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16)); }
   .contract-card__grid {
     display: grid;
     grid-template-rows: 1fr auto; }
-    .contract-card__grid-underlying-trade, .contract-card__grid-profit-payout {
-      grid-template-columns: 1fr 1fr; }
+    .contract-card__grid-underlying-trade {
+      grid-template-columns: 1.5fr 1fr;
+      width: 100%; }
     .contract-card__grid-profit-payout {
+      grid-template-columns: 1fr 1fr;
       padding: 8px 0;
       border-radius: 4px;
       margin-left: -4px;
@@ -2175,11 +2203,22 @@ html {
         background: rgba(0, 0, 0, 0.04); }
       .theme--dark .contract-card__grid-profit-payout {
         background: #191c31; }
-    .contract-card__grid-underlying-trade {
-      width: 100%; }
   .contract-card .purchase-price {
     font-weight: bold;
     font-size: 1em; }
+    .contract-card .purchase-price-container {
+      margin-bottom: 0.5em; }
+  .contract-card .potential-payout-container {
+    margin-top: 0.7em; }
+  .contract-card .potential-payout-price {
+    font-weight: bold;
+    font-size: 1em; }
+  .contract-card__separator {
+    width: 100%; }
+    .theme--light .contract-card__separator {
+      border-top: 1px solid #f4f4f6; }
+    .theme--dark .contract-card__separator {
+      border-top: 1px solid #191c31; }
   .contract-card__underlying-name {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2208,14 +2247,10 @@ html {
       fill: #ffffff; }
     .contract-card__type .category-type .color2-fill {
       fill: #ff9933 !important; }
-    .contract-card__type .contract-type {
-      margin-left: 0.5em; }
   .contract-card__symbol {
     margin-left: 0.5rem;
     font-size: 1em;
-    line-height: 1.5;
-    max-width: 60px;
-    word-break: break-word; }
+    line-height: 1.5; }
   .contract-card__header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2223,7 +2258,7 @@ html {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin: 0.5em 0.2em 1em; }
+    margin: 0.5em 0.2em; }
   .contract-card__body {
     border-radius: 4px;
     width: 100%;
@@ -2254,15 +2289,45 @@ html {
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    margin-bottom: 0.5em; }
     .theme--light .contract-card__footer {
       color: rgba(0, 0, 0, 0.8); }
     .theme--dark .contract-card__footer {
       color: #ffffff; }
+  .contract-card__sell-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    margin-top: 0.5em;
+    -webkit-transition: opacity 0.25s linear, -webkit-transform 0.25s ease;
+    transition: opacity 0.25s linear, -webkit-transform 0.25s ease;
+    transition: transform 0.25s ease, opacity 0.25s linear;
+    transition: transform 0.25s ease, opacity 0.25s linear, -webkit-transform 0.25s ease; }
+    .contract-card__sell-button--enter-done {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+    .contract-card__sell-button--enter, .contract-card__sell-button--exit {
+      opacity: 0;
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px); }
+    .contract-card__sell-button .btn--sell {
+      height: 32px; }
+  .contract-card .result-details__wrapper {
+    padding: 2px 0;
+    width: 100%; }
   .contract-card .result-details__wrapper--is-open {
-    margin-top: 0.4em; }
+    margin-top: 0.5em; }
   .contract-card .result-details__toggle {
-    margin: 0;
+    margin: 0 0 -0.5em;
     width: 100%; }
   .contract-card .result-details__label {
     font-size: 0.8em;
@@ -2283,7 +2348,7 @@ html {
 
 .positions-drawer {
   width: 240px;
-  height: calc(100vh - 48px - 35px - 2px - (8px * 4));
+  height: calc(100vh - 48px - 35px - 2px - (8px * 3.6));
   margin-top: 16px;
   position: absolute;
   z-index: 2;
@@ -2341,7 +2406,7 @@ html {
             transform: translateX(8px);
     opacity: 1; }
   .positions-drawer__header {
-    height: 4em;
+    height: 3.6em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2353,8 +2418,22 @@ html {
         -ms-flex-align: center;
             align-items: center;
     padding: 0 1em; }
+    .positions-drawer__header:after {
+      content: '';
+      position: absolute;
+      height: 8px;
+      width: calc(100% - 18px);
+      left: 9px;
+      top: 39px;
+      z-index: 1; }
+      .theme--light .positions-drawer__header:after {
+        -webkit-box-shadow: 0 8px 2px -2px #f4f4f6 inset;
+                box-shadow: 0 8px 2px -2px #f4f4f6 inset; }
+      .theme--dark .positions-drawer__header:after {
+        -webkit-box-shadow: 0 8px 2px -2px #191c31 inset;
+                box-shadow: 0 8px 2px -2px #191c31 inset; }
   .positions-drawer__body {
-    height: calc(100% - 10em);
+    height: calc(100% - 9.72em);
     padding: 0.8em 0 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -2377,6 +2456,19 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    .positions-drawer__footer:before {
+      content: '';
+      position: absolute;
+      height: 8px;
+      width: calc(100% - 18px);
+      left: 9px;
+      top: -6px; }
+      .theme--light .positions-drawer__footer:before {
+        -webkit-box-shadow: 0 -8px 2px -2px #f4f4f6 inset;
+                box-shadow: 0 -8px 2px -2px #f4f4f6 inset; }
+      .theme--dark .positions-drawer__footer:before {
+        -webkit-box-shadow: 0 -8px 2px -2px #191c31 inset;
+                box-shadow: 0 -8px 2px -2px #191c31 inset; }
     .positions-drawer__footer .btn {
       width: 100%;
       margin: 8px;
@@ -2439,7 +2531,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    max-height: 130px;
+    max-height: 160px;
     border-radius: 4px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -2548,9 +2640,10 @@ html {
   .positions-drawer-card__grid {
     display: grid;
     grid-template-rows: 1fr auto; }
-    .positions-drawer-card__grid-underlying-trade, .positions-drawer-card__grid-profit-payout {
-      grid-template-columns: 1fr 1fr; }
+    .positions-drawer-card__grid-underlying-trade {
+      grid-template-columns: 1.5fr 1fr; }
     .positions-drawer-card__grid-profit-payout {
+      grid-template-columns: 1fr 1fr;
       padding: 8px 0;
       border-radius: 4px;
       margin-left: -4px;
@@ -2559,7 +2652,7 @@ html {
         background: rgba(0, 0, 0, 0.04); }
       .theme--dark .positions-drawer-card__grid-profit-payout {
         background: #191c31; }
-  .positions-drawer-card__purchase-price {
+  .positions-drawer-card__purchase-price, .positions-drawer-card__payout-price {
     font-size: 1.2em;
     padding: 8px;
     display: -webkit-box;
@@ -2572,15 +2665,22 @@ html {
         -ms-flex-align: center;
             align-items: center;
     font-weight: bold; }
-  .positions-drawer-card__purchase-label {
+  .positions-drawer-card__purchase-label, .positions-drawer-card__payout-label {
     text-transform: capitalize;
     margin-right: 0.5em;
     font-size: 1em;
     font-weight: normal; }
-    .theme--light .positions-drawer-card__purchase-label {
+    .theme--light .positions-drawer-card__purchase-label, .theme--light .positions-drawer-card__payout-label {
       color: rgba(0, 0, 0, 0.8); }
-    .theme--dark .positions-drawer-card__purchase-label {
+    .theme--dark .positions-drawer-card__purchase-label, .theme--dark .positions-drawer-card__payout-label {
       color: #7f8397; }
+  .positions-drawer-card__payout-price {
+    margin-left: -4px;
+    margin-right: -4px; }
+    .theme--light .positions-drawer-card__payout-price {
+      border-top: 1px solid #f4f4f6; }
+    .theme--dark .positions-drawer-card__payout-price {
+      border-top: 1px solid #191c31; }
   .positions-drawer-card__type {
     font-size: 1.2em;
     display: -webkit-box;
@@ -2715,10 +2815,11 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center; }
+  text-align: center;
+  margin-left: -4px; }
   .contract-type__type-wrapper {
-    margin: 0 0.4em 0 0;
-    padding: 0.5em;
+    margin: 0;
+    padding: 0.5em 0.3em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5014,6 +5115,12 @@ html {
   .theme--dark .label--success {
     color: #39b19d;
     background-color: rgba(57, 177, 157, 0.16); }
+  .theme--light .label--info {
+    color: #2196f3;
+    background-color: rgba(33, 150, 243, 0.16); }
+  .theme--dark .label--info {
+    color: #2196f3;
+    background-color: rgba(33, 150, 243, 0.16); }
 
 /** @define trade-type-info-dialog; */
 .trade-type-info-dialog {
@@ -5240,7 +5347,7 @@ html {
     .theme--light .table__row, .theme--light .table__row:active, .theme--light .table__row:visited {
       color: rgba(0, 0, 0, 0.8); }
     .theme--dark .table__row, .theme--dark .table__row:active, .theme--dark .table__row:visited {
-      color: #ffffff; }
+      color: #7f8397; }
   .table__head {
     height: 52px; }
     .theme--light .table__head {
@@ -5253,7 +5360,7 @@ html {
     .theme--light .table__head .table__row {
       color: rgba(0, 0, 0, 0.8); }
     .theme--dark .table__head .table__row {
-      color: #7f8397; }
+      color: #ffffff; }
   .table__body {
     overflow-y: auto;
     -webkit-box-flex: 1;
@@ -5439,8 +5546,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
   padding: 8px; }
   .theme--light .market-symbol-icon .color1-fill {
@@ -5723,17 +5831,9 @@ html {
 
 /** @define popconfirm */
 .pl-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
   .pl-card__item {
-    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5750,7 +5850,7 @@ html {
         font-size: 1em;
         color: rgba(0, 0, 0, 0.8);
         font-weight: 400;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: center;
         line-height: unset;
         color: rgba(0, 0, 0, 0.8); }
@@ -5758,30 +5858,45 @@ html {
         font-size: 1em;
         color: rgba(0, 0, 0, 0.8);
         font-weight: 400;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: center;
         line-height: unset;
         color: #ffffff; }
-    .theme--light .pl-card__item__body {
-      font-size: 1.2em;
-      color: rgba(0, 0, 0, 0.8);
-      font-weight: 700;
-      text-transform: capitalize;
-      text-align: center;
-      line-height: 1.25;
-      color: rgba(0, 0, 0, 0.8); }
-    .theme--dark .pl-card__item__body {
-      font-size: 1.2em;
-      color: rgba(0, 0, 0, 0.8);
-      font-weight: 700;
-      text-transform: capitalize;
-      text-align: center;
-      line-height: 1.25;
-      color: #ffffff; }
+    .pl-card__item__body {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .theme--light .pl-card__item__body {
+        font-size: 1.2em;
+        color: rgba(0, 0, 0, 0.8);
+        font-weight: 700;
+        text-transform: capitalize;
+        text-align: center;
+        line-height: 1.25;
+        color: rgba(0, 0, 0, 0.8); }
+      .theme--dark .pl-card__item__body {
+        font-size: 1.2em;
+        color: rgba(0, 0, 0, 0.8);
+        font-weight: 700;
+        text-transform: capitalize;
+        text-align: center;
+        line-height: 1.25;
+        color: #ffffff; }
     .pl-card__item__body--loss {
       color: #e31c4b !important; }
     .pl-card__item__body--profit {
       color: #39b19d !important; }
+  .pl-card__indicative--movement {
+    width: 16px;
+    height: 16px; }
+    .pl-card__indicative--movement-complete, .pl-card__indicative--movement-complete:after {
+      display: none; }
+    .pl-card__indicative--movement:after {
+      content: '';
+      width: 16px; }
 
 .radio-group {
   display: -webkit-box;
@@ -8126,7 +8241,7 @@ html {
       .theme--light .reports__meta-description--heading {
         color: rgba(0, 0, 0, 0.8); }
       .theme--dark .reports__meta-description--heading {
-        color: #7f8397; }
+        color: #ffffff; }
     .reports__meta-description--paragraph {
       font-size: 1.4em;
       color: rgba(0, 0, 0, 0.8);
@@ -8137,7 +8252,7 @@ html {
       .theme--light .reports__meta-description--paragraph {
         color: rgba(0, 0, 0, 0.8); }
       .theme--dark .reports__meta-description--paragraph {
-        color: #ffffff; }
+        color: #7f8397; }
   .reports .unknown-icon {
     margin-left: 8px;
     fill: #2a3052;
@@ -9071,7 +9186,9 @@ html {
     top: 0;
     bottom: 0;
     display: inline-block; }
-  .btn-purchase:hover:not(.btn-purchase--disabled) {
+  .btn-purchase[disabled]:hover {
+    cursor: initial; }
+  .btn-purchase:hover:not(.btn-purchase--disabled):not([disabled]) {
     -webkit-transform: translate3d(0, -4px, 0);
             transform: translate3d(0, -4px, 0); }
   .btn-purchase__shadow-wrapper {
@@ -9090,6 +9207,9 @@ html {
       pointer-events: none; }
     .btn-purchase__shadow-wrapper--disabled .btn-purchase__box-shadow {
       opacity: 0; }
+    .btn-purchase__shadow-wrapper--disabled:hover {
+      -webkit-transform: none;
+              transform: none; }
   .btn-purchase--disabled {
     cursor: default; }
     .theme--light .btn-purchase--disabled {

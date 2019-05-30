@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _smartChart = __webpack_require__(895);
+var _smartChart = __webpack_require__(898);
 
 var _smartChart2 = _interopRequireDefault(_smartChart);
 
@@ -21,7 +21,7 @@ exports.default = _smartChart2.default;
 
 /***/ }),
 
-/***/ 895:
+/***/ 898:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43,27 +43,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _url = __webpack_require__(39);
+var _url = __webpack_require__(34);
 
 var _connect = __webpack_require__(7);
 
-var _bottomWidgets = __webpack_require__(896);
+var _bottomWidgets = __webpack_require__(899);
 
 var _bottomWidgets2 = _interopRequireDefault(_bottomWidgets);
 
-var _controlWidgets = __webpack_require__(897);
+var _controlWidgets = __webpack_require__(900);
 
 var _controlWidgets2 = _interopRequireDefault(_controlWidgets);
 
-var _marker = __webpack_require__(898);
+var _marker = __webpack_require__(901);
 
 var _marker2 = _interopRequireDefault(_marker);
 
-var _topWidgets = __webpack_require__(899);
+var _topWidgets = __webpack_require__(902);
 
 var _topWidgets2 = _interopRequireDefault(_topWidgets);
 
-var _symbol = __webpack_require__(900);
+var _symbol = __webpack_require__(903);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -211,7 +211,6 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         getChartStatus: modules.smart_chart.getChartStatus,
         is_contract_mode: modules.smart_chart.is_contract_mode,
         is_title_enabled: modules.smart_chart.is_title_enabled,
-        is_static_chart: modules.smart_chart.is_static_chart,
         margin: modules.smart_chart.margin,
         markers_array: modules.smart_chart.markers_array,
         onMount: modules.smart_chart.onMount,
@@ -232,7 +231,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 896:
+/***/ 899:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -269,7 +268,7 @@ exports.default = BottomWidgets;
 
 /***/ }),
 
-/***/ 897:
+/***/ 900:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -318,7 +317,7 @@ exports.default = ControlWidgets;
 
 /***/ }),
 
-/***/ 898:
+/***/ 901:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -369,7 +368,7 @@ exports.default = (0, _mobxReact.observer)(ChartMarker);
 
 /***/ }),
 
-/***/ 899:
+/***/ 902:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -415,7 +414,7 @@ exports.default = TopWidgets;
 
 /***/ }),
 
-/***/ 900:
+/***/ 903:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
