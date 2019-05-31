@@ -928,7 +928,7 @@ var _money = __webpack_require__(67);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _iconPriceMove = __webpack_require__(103);
+var _iconPriceMove = __webpack_require__(104);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
