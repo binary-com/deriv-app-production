@@ -954,7 +954,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _contract = __webpack_require__(92);
+var _contract = __webpack_require__(93);
 
 var _icon = __webpack_require__(40);
 
