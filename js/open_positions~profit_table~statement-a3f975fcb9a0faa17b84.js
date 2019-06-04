@@ -41,7 +41,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _mobxReact = __webpack_require__(12);
 
-var _ttReactCustomScrollbars = __webpack_require__(103);
+var _ttReactCustomScrollbars = __webpack_require__(101);
 
 var _propTypes = __webpack_require__(1);
 
@@ -223,7 +223,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(57);
+var _reactRouterDom = __webpack_require__(58);
 
 var _tableCell = __webpack_require__(852);
 
@@ -860,7 +860,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _loading = __webpack_require__(296);
+var _loading = __webpack_require__(294);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -1017,9 +1017,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _helpers = __webpack_require__(182);
+var _helpers = __webpack_require__(181);
 
-var _positionsProgressSlider = __webpack_require__(304);
+var _positionsProgressSlider = __webpack_require__(302);
 
 var _positionsProgressSlider2 = _interopRequireDefault(_positionsProgressSlider);
 
@@ -1089,7 +1089,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _underlyingIcon = __webpack_require__(297);
+var _underlyingIcon = __webpack_require__(295);
 
 var _Common = __webpack_require__(11);
 
@@ -1097,7 +1097,7 @@ var _iconDeposit = __webpack_require__(894);
 
 var _iconWithdrawal = __webpack_require__(895);
 
-var _Types = __webpack_require__(130);
+var _Types = __webpack_require__(128);
 
 var _marketUnderyling = __webpack_require__(858);
 

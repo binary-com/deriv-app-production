@@ -22,7 +22,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(57);
+var _reactRouterDom = __webpack_require__(58);
 
 var _localize = __webpack_require__(5);
 
@@ -36,9 +36,9 @@ var _localize2 = __webpack_require__(26);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _appConfig = __webpack_require__(179);
+var _appConfig = __webpack_require__(178);
 
-var _helpers = __webpack_require__(178);
+var _helpers = __webpack_require__(177);
 
 var _emptyTradeHistoryMessage = __webpack_require__(855);
 

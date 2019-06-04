@@ -64,7 +64,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactPose = __webpack_require__(180);
+var _reactPose = __webpack_require__(179);
 
 var _reactPose2 = _interopRequireDefault(_reactPose);
 
@@ -238,11 +238,11 @@ var _reactTransitionGroup = __webpack_require__(27);
 
 var _localize = __webpack_require__(5);
 
-var _routes = __webpack_require__(58);
+var _routes = __webpack_require__(59);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _Errors = __webpack_require__(183);
+var _Errors = __webpack_require__(182);
 
 var _Errors2 = _interopRequireDefault(_Errors);
 
@@ -339,7 +339,7 @@ var _utility = __webpack_require__(9);
 
 var _Animations = __webpack_require__(848);
 
-var _chartLoader = __webpack_require__(300);
+var _chartLoader = __webpack_require__(298);
 
 var _chartLoader2 = _interopRequireDefault(_chartLoader);
 
@@ -347,7 +347,7 @@ var _ContractDrawer = __webpack_require__(864);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
-var _notificationMessages = __webpack_require__(306);
+var _notificationMessages = __webpack_require__(304);
 
 var _notificationMessages2 = _interopRequireDefault(_notificationMessages);
 
@@ -355,19 +355,19 @@ var _connect = __webpack_require__(7);
 
 var _Common = __webpack_require__(11);
 
-var _Settings = __webpack_require__(295);
+var _Settings = __webpack_require__(293);
 
-var _routes = __webpack_require__(58);
+var _routes = __webpack_require__(59);
 
 var _routes2 = _interopRequireDefault(_routes);
 
 var _localize = __webpack_require__(5);
 
-var _infoBox = __webpack_require__(308);
+var _infoBox = __webpack_require__(306);
 
 var _infoBox2 = _interopRequireDefault(_infoBox);
 
-var _digits = __webpack_require__(307);
+var _digits = __webpack_require__(305);
 
 var _digits2 = _interopRequireDefault(_digits);
 
@@ -623,25 +623,25 @@ var _localize2 = __webpack_require__(26);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _underlyingIcon = __webpack_require__(297);
+var _underlyingIcon = __webpack_require__(295);
 
 var _button = __webpack_require__(29);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _resultDetails = __webpack_require__(305);
+var _resultDetails = __webpack_require__(303);
 
 var _resultDetails2 = _interopRequireDefault(_resultDetails);
 
-var _contractTypeCell = __webpack_require__(302);
+var _contractTypeCell = __webpack_require__(300);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
-var _ProgressSlider = __webpack_require__(303);
+var _ProgressSlider = __webpack_require__(301);
 
 var _ProgressSlider2 = _interopRequireDefault(_ProgressSlider);
 
-var _helpers = __webpack_require__(182);
+var _helpers = __webpack_require__(181);
 
 var _profitLossCardContent = __webpack_require__(866);
 
@@ -663,7 +663,7 @@ var _contractCard = __webpack_require__(860);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
-var _details = __webpack_require__(298);
+var _details = __webpack_require__(296);
 
 var _logic = __webpack_require__(83);
 
@@ -928,7 +928,7 @@ var _money = __webpack_require__(67);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _iconPriceMove = __webpack_require__(104);
+var _iconPriceMove = __webpack_require__(102);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
