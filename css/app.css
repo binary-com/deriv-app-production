@@ -4621,10 +4621,13 @@ html {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      width: 60%; }
+      width: 100%; }
       .calendar__cell-tooltip-icon {
         margin-top: 0.1em;
         display: inherit; }
+    .calendar__cell-date {
+      width: 100%;
+      text-align: center; }
 
 /** @define card-list */
 .card-list {
