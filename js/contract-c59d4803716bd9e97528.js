@@ -224,6 +224,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -232,7 +234,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(39);
+var _reactRouter = __webpack_require__(40);
 
 var _reactTransitionGroup = __webpack_require__(27);
 
@@ -254,42 +256,67 @@ var _contractReplay2 = _interopRequireDefault(_contractReplay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Contract = function Contract(_ref) {
-    var error_message = _ref.error_message,
-        has_error = _ref.has_error,
-        history = _ref.history,
-        match = _ref.match;
-    return _react2.default.createElement(
-        _react2.default.Fragment,
-        null,
-        has_error ? _react2.default.createElement(_Errors2.default, {
-            message: error_message,
-            redirect_label: (0, _localize.localize)('Go back to trading'),
-            redirectOnClick: function redirectOnClick() {
-                return history.push(_routes2.default.trade);
-            },
-            should_show_refresh: false
-        }) : _react2.default.createElement(
-            _reactTransitionGroup.CSSTransition,
-            {
-                'in': !has_error,
-                timeout: 400,
-                classNames: {
-                    enter: 'contract--enter',
-                    enterDone: 'contract--enter-done',
-                    exit: 'contract--exit'
-                },
-                unmountOnExit: true
-            },
-            _react2.default.createElement(_contractReplay2.default, {
-                contract_id: match.params.contract_id,
-                key: match.params.contract_id
-            })
-        )
-    );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contract = function (_React$Component) {
+    _inherits(Contract, _React$Component);
+
+    function Contract() {
+        _classCallCheck(this, Contract);
+
+        return _possibleConstructorReturn(this, (Contract.__proto__ || Object.getPrototypeOf(Contract)).apply(this, arguments));
+    }
+
+    _createClass(Contract, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            if (this.props.has_error) this.props.clearError();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                _react2.default.Fragment,
+                null,
+                this.props.has_error ? _react2.default.createElement(_Errors2.default, {
+                    message: this.props.error_message,
+                    redirect_label: (0, _localize.localize)('Go back to trading'),
+                    redirectOnClick: function redirectOnClick() {
+                        return _this2.props.history.push(_routes2.default.trade);
+                    },
+                    should_show_refresh: false
+                }) : _react2.default.createElement(
+                    _reactTransitionGroup.CSSTransition,
+                    {
+                        'in': !this.props.has_error,
+                        timeout: 400,
+                        classNames: {
+                            enter: 'contract--enter',
+                            enterDone: 'contract--enter-done',
+                            exit: 'contract--exit'
+                        },
+                        unmountOnExit: true
+                    },
+                    _react2.default.createElement(_contractReplay2.default, {
+                        contract_id: this.props.match.params.contract_id,
+                        key: this.props.match.params.contract_id
+                    })
+                )
+            );
+        }
+    }]);
+
+    return Contract;
+}(_react2.default.Component);
 
 Contract.propTypes = {
+    clearError: _propTypes2.default.func,
     error_message: _propTypes2.default.string,
     has_error: _propTypes2.default.bool,
     history: _propTypes2.default.object,
@@ -298,10 +325,11 @@ Contract.propTypes = {
     symbol: _propTypes2.default.string
 };
 
-exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_ref2) {
-    var modules = _ref2.modules,
-        ui = _ref2.ui;
+exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_ref) {
+    var modules = _ref.modules,
+        ui = _ref.ui;
     return {
+        clearError: modules.contract.clearError,
         error_message: modules.contract.error_message,
         has_error: modules.contract.has_error,
         is_mobile: ui.is_mobile,
@@ -333,7 +361,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(39);
+var _reactRouter = __webpack_require__(40);
 
 var _utility = __webpack_require__(10);
 
@@ -611,7 +639,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(39);
+var _reactRouter = __webpack_require__(40);
 
 var _reactTransitionGroup = __webpack_require__(27);
 
@@ -627,7 +655,7 @@ var _localize3 = _interopRequireDefault(_localize2);
 
 var _underlyingIcon = __webpack_require__(243);
 
-var _button = __webpack_require__(29);
+var _button = __webpack_require__(30);
 
 var _button2 = _interopRequireDefault(_button);
 
@@ -644,6 +672,10 @@ var _ProgressSlider = __webpack_require__(249);
 var _ProgressSlider2 = _interopRequireDefault(_ProgressSlider);
 
 var _helpers = __webpack_require__(164);
+
+var _routes = __webpack_require__(58);
+
+var _routes2 = _interopRequireDefault(_routes);
 
 var _profitLossCardContent = __webpack_require__(854);
 
@@ -699,6 +731,13 @@ var ContractDrawer = function (_Component) {
             is_shade_on: false
         }, _this.handleShade = function (shade) {
             _this.setState({ is_shade_on: shade });
+        }, _this.redirectBackToReports = function () {
+            // history.goBack() will go to the wrong location if user goes to contract by pasting it in the url.
+            if (_this.props.history.location.state) {
+                _this.props.history.goBack();
+            } else {
+                _this.props.history.push(_routes2.default.reports);
+            }
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -853,8 +892,6 @@ var ContractDrawer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             if (!this.props.contract_info) return null;
             var body_content = this.getBodyContent();
             return _react2.default.createElement(
@@ -864,9 +901,7 @@ var ContractDrawer = function (_Component) {
                     'div',
                     {
                         className: 'contract-drawer__heading',
-                        onClick: function onClick() {
-                            return _this2.props.history.goBack();
-                        }
+                        onClick: this.redirectBackToReports
                     },
                     _react2.default.createElement(_icon2.default, { icon: 'IconBack' }),
                     _react2.default.createElement(

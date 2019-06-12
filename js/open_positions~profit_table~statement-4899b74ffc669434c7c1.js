@@ -270,7 +270,15 @@ var TableRow = function TableRow(_ref) {
 
     return to ? _react2.default.createElement(
         _reactRouterDom.NavLink,
-        { className: row_class_name, to: to },
+        {
+            className: row_class_name,
+            to: {
+                pathname: to,
+                state: {
+                    from_table_row: true
+                }
+            }
+        },
         cells
     ) : _react2.default.createElement(_tableRowInfo2.default, {
         className: row_class_name,
