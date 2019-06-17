@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _portfolio = __webpack_require__(858);
+var _portfolio = __webpack_require__(878);
 
 var _portfolio2 = _interopRequireDefault(_portfolio);
 
@@ -244,7 +244,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(57);
+var _reactRouterDom = __webpack_require__(50);
 
 var _tableCell = __webpack_require__(828);
 
@@ -512,7 +512,7 @@ exports.default = IndicativeCell;
 
 /***/ }),
 
-/***/ 858:
+/***/ 878:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -538,27 +538,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(57);
+var _reactRouterDom = __webpack_require__(50);
 
 var _DataTable = __webpack_require__(822);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
-var _helpers = __webpack_require__(160);
+var _helpers = __webpack_require__(120);
 
-var _connect = __webpack_require__(8);
+var _connect = __webpack_require__(7);
 
-var _cardList = __webpack_require__(859);
+var _cardList = __webpack_require__(879);
 
 var _cardList2 = _interopRequireDefault(_cardList);
 
-var _emptyPortfolioMessage = __webpack_require__(247);
+var _emptyPortfolioMessage = __webpack_require__(248);
 
 var _emptyPortfolioMessage2 = _interopRequireDefault(_emptyPortfolioMessage);
 
-var _dataTableConstants = __webpack_require__(861);
+var _dataTableConstants = __webpack_require__(881);
 
-var _loading = __webpack_require__(242);
+var _loading = __webpack_require__(243);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -675,7 +675,7 @@ exports.default = (0, _connect.connect)(function (_ref) {
 
 /***/ }),
 
-/***/ 859:
+/***/ 879:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -697,7 +697,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _portfolioCard = __webpack_require__(860);
+var _portfolioCard = __webpack_require__(880);
 
 var _portfolioCard2 = _interopRequireDefault(_portfolioCard);
 
@@ -728,7 +728,7 @@ exports.default = CardList;
 
 /***/ }),
 
-/***/ 860:
+/***/ 880:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -746,15 +746,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(57);
+var _reactRouterDom = __webpack_require__(50);
 
 var _money = __webpack_require__(66);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _helpers = __webpack_require__(160);
+var _helpers = __webpack_require__(120);
 
-var _remainingTime = __webpack_require__(163);
+var _remainingTime = __webpack_require__(164);
 
 var _remainingTime2 = _interopRequireDefault(_remainingTime);
 
@@ -850,7 +850,7 @@ exports.default = PortfolioCard;
 
 /***/ }),
 
-/***/ 861:
+/***/ 881:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -871,11 +871,11 @@ var _money = __webpack_require__(66);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _remainingTime = __webpack_require__(163);
+var _remainingTime = __webpack_require__(164);
 
 var _remainingTime2 = _interopRequireDefault(_remainingTime);
 
-var _contractTypeCell = __webpack_require__(862);
+var _contractTypeCell = __webpack_require__(882);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
@@ -944,7 +944,7 @@ var getTableColumnsTemplate = exports.getTableColumnsTemplate = function getTabl
 
 /***/ }),
 
-/***/ 862:
+/***/ 882:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -964,7 +964,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _contract = __webpack_require__(91);
 
-var _icon = __webpack_require__(7);
+var _icon = __webpack_require__(8);
 
 var _icon2 = _interopRequireDefault(_icon);
 

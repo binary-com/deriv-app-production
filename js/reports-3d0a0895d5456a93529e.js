@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _reports = __webpack_require__(876);
+var _reports = __webpack_require__(896);
 
 var _reports2 = _interopRequireDefault(_reports);
 
@@ -64,7 +64,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactPose = __webpack_require__(162);
+var _reactPose = __webpack_require__(163);
 
 var _reactPose2 = _interopRequireDefault(_reactPose);
 
@@ -165,7 +165,7 @@ exports.FadeWrapper = FadeWrapper;
 
 /***/ }),
 
-/***/ 876:
+/***/ 896:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -185,13 +185,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(57);
+var _reactRouterDom = __webpack_require__(50);
 
-var _connect = __webpack_require__(8);
+var _connect = __webpack_require__(7);
 
 var _Animations = __webpack_require__(824);
 
-var _verticalTab = __webpack_require__(245);
+var _verticalTab = __webpack_require__(246);
 
 var _verticalTab2 = _interopRequireDefault(_verticalTab);
 

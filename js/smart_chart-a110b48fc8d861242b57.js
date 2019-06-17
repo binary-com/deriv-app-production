@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _smartChart = __webpack_require__(884);
+var _smartChart = __webpack_require__(904);
 
 var _smartChart2 = _interopRequireDefault(_smartChart);
 
@@ -21,7 +21,7 @@ exports.default = _smartChart2.default;
 
 /***/ }),
 
-/***/ 884:
+/***/ 904:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43,27 +43,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _url = __webpack_require__(34);
+var _url = __webpack_require__(35);
 
-var _connect = __webpack_require__(8);
+var _connect = __webpack_require__(7);
 
-var _bottomWidgets = __webpack_require__(885);
+var _bottomWidgets = __webpack_require__(905);
 
 var _bottomWidgets2 = _interopRequireDefault(_bottomWidgets);
 
-var _controlWidgets = __webpack_require__(886);
+var _controlWidgets = __webpack_require__(906);
 
 var _controlWidgets2 = _interopRequireDefault(_controlWidgets);
 
-var _marker = __webpack_require__(887);
+var _marker = __webpack_require__(907);
 
 var _marker2 = _interopRequireDefault(_marker);
 
-var _topWidgets = __webpack_require__(888);
+var _topWidgets = __webpack_require__(908);
 
 var _topWidgets2 = _interopRequireDefault(_topWidgets);
 
-var _symbol = __webpack_require__(889);
+var _symbol = __webpack_require__(909);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -231,7 +231,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 885:
+/***/ 905:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -268,7 +268,7 @@ exports.default = BottomWidgets;
 
 /***/ }),
 
-/***/ 886:
+/***/ 906:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -298,10 +298,10 @@ var ControlWidgets = function ControlWidgets(_ref) {
         null,
         _react2.default.createElement(_smartchartsBeta.CrosshairToggle, null),
         _react2.default.createElement(_smartchartsBeta.ChartTypes, { onChange: updateChartType }),
-        _react2.default.createElement(_smartchartsBeta.StudyLegend, null),
-        _react2.default.createElement(_smartchartsBeta.Comparison, null),
+        _react2.default.createElement(_smartchartsBeta.StudyLegend, { searchInputClassName: 'data-hj-whitelist' }),
+        _react2.default.createElement(_smartchartsBeta.Comparison, { searchInputClassName: 'data-hj-whitelist' }),
         _react2.default.createElement(_smartchartsBeta.DrawTools, null),
-        _react2.default.createElement(_smartchartsBeta.Views, null),
+        _react2.default.createElement(_smartchartsBeta.Views, { searchInputClassName: 'data-hj-whitelist' }),
         _react2.default.createElement(_smartchartsBeta.Share, null),
         _react2.default.createElement(_smartchartsBeta.Timeperiod, { onChange: updateGranularity }),
         _react2.default.createElement(_smartchartsBeta.ChartSize, null)
@@ -317,7 +317,7 @@ exports.default = ControlWidgets;
 
 /***/ }),
 
-/***/ 887:
+/***/ 907:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -368,7 +368,7 @@ exports.default = (0, _mobxReact.observer)(ChartMarker);
 
 /***/ }),
 
-/***/ 888:
+/***/ 908:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -399,7 +399,7 @@ var TopWidgets = function TopWidgets(_ref) {
         _react2.default.Fragment,
         null,
         InfoBox,
-        _react2.default.createElement(_smartchartsBeta.ChartTitle, { enabled: is_title_enabled, onChange: onSymbolChange }),
+        _react2.default.createElement(_smartchartsBeta.ChartTitle, { enabled: is_title_enabled, onChange: onSymbolChange, searchInputClassName: 'data-hj-whitelist' }),
         _react2.default.createElement(_smartchartsBeta.AssetInformation, null)
     );
 };
@@ -414,7 +414,7 @@ exports.default = TopWidgets;
 
 /***/ }),
 
-/***/ 889:
+/***/ 909:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

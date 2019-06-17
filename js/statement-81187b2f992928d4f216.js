@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["profit_table"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["statement"],{
 
-/***/ 818:
+/***/ 819:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12,23 +12,21 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _mobxReact = __webpack_require__(14);
+
 var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _mobxReact = __webpack_require__(14);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(40);
+var _reactRouterDom = __webpack_require__(50);
 
 var _localize = __webpack_require__(5);
 
-var _url = __webpack_require__(34);
-
-var _appConfig = __webpack_require__(161);
+var _url = __webpack_require__(35);
 
 var _DataTable = __webpack_require__(822);
 
@@ -38,15 +36,15 @@ var _localize2 = __webpack_require__(26);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _helpers = __webpack_require__(160);
+var _helpers = __webpack_require__(120);
+
+var _appConfig = __webpack_require__(162);
 
 var _Constants = __webpack_require__(98);
 
-var _connect = __webpack_require__(8);
+var _connect = __webpack_require__(7);
 
-var _emptyTradeHistoryMessage = __webpack_require__(831);
-
-var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
+var _dataTableConstants = __webpack_require__(833);
 
 var _placeholderComponent = __webpack_require__(835);
 
@@ -54,7 +52,9 @@ var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
 var _reportsMeta = __webpack_require__(832);
 
-var _dataTableConstants = __webpack_require__(833);
+var _emptyTradeHistoryMessage = __webpack_require__(831);
+
+var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
 var _marketUnderyling = __webpack_require__(834);
 
@@ -66,34 +66,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ProfitTable = function (_React$Component) {
-    _inherits(ProfitTable, _React$Component);
+var Statement = function (_React$Component) {
+    _inherits(Statement, _React$Component);
 
-    function ProfitTable() {
+    function Statement() {
         var _ref;
 
         var _temp, _this, _ret;
 
-        _classCallCheck(this, ProfitTable);
+        _classCallCheck(this, Statement);
 
         for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProfitTable.__proto__ || Object.getPrototypeOf(ProfitTable)).call.apply(_ref, [this].concat(args))), _this), _this.getRowAction = function (row_obj) {
-            return (0, _Constants.getSupportedContracts)()[(0, _marketUnderyling.getMarketInformation)(row_obj).category.toUpperCase()] ? (0, _helpers.getContractPath)(row_obj.contract_id) : {
-                component: _react2.default.createElement(_localize3.default, {
-                    str: 'This trade type is currently not supported on [_1]. Please go to [_2]Binary.com[_3] for details.',
-                    replacers: {
-                        '1': _appConfig.website_name,
-                        '2_3': _react2.default.createElement('a', { className: 'link link--orange', rel: 'noopener noreferrer', target: '_blank', href: (0, _url.urlFor)('user/profit_tablews', undefined, undefined, true) })
-                    }
-                })
-            };
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Statement.__proto__ || Object.getPrototypeOf(Statement)).call.apply(_ref, [this].concat(args))), _this), _this.getRowAction = function (row_obj) {
+            var action = void 0;
+
+            if (row_obj.id && ['buy', 'sell'].includes(row_obj.action_type)) {
+                action = (0, _Constants.getSupportedContracts)()[(0, _marketUnderyling.getMarketInformation)(row_obj).category.toUpperCase()] ? (0, _helpers.getContractPath)(row_obj.id) : {
+                    component: _react2.default.createElement(_localize3.default, {
+                        str: 'This trade type is currently not supported on [_1]. Please go to [_2]Binary.com[_3] for details.',
+                        replacers: {
+                            '1': _appConfig.website_name,
+                            '2_3': _react2.default.createElement('a', { className: 'link link--orange', rel: 'noopener noreferrer', target: '_blank', href: (0, _url.urlFor)('user/statementws', undefined, undefined, true) })
+                        }
+                    })
+                };
+            } else if (['deposit', 'withdrawal'].includes(row_obj.action_type)) {
+                action = {
+                    message: row_obj.desc
+                };
+            }
+
+            return action;
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    _createClass(ProfitTable, [{
+    _createClass(Statement, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.props.onMount();
@@ -106,6 +116,8 @@ var ProfitTable = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _props = this.props,
                 component_icon = _props.component_icon,
                 currency = _props.currency,
@@ -114,8 +126,8 @@ var ProfitTable = function (_React$Component) {
                 is_loading = _props.is_loading,
                 error = _props.error,
                 handleScroll = _props.handleScroll,
-                has_selected_date = _props.has_selected_date,
-                totals = _props.totals;
+                has_selected_date = _props.has_selected_date;
+
 
             if (error) return _react2.default.createElement(
                 'p',
@@ -123,14 +135,14 @@ var ProfitTable = function (_React$Component) {
                 error
             );
 
-            var columns = (0, _dataTableConstants.getProfitTableColumnsTemplate)(currency);
+            var columns = (0, _dataTableConstants.getStatementTableColumnsTemplate)(currency);
 
             return _react2.default.createElement(
                 _react2.default.Fragment,
                 null,
                 _react2.default.createElement(_reportsMeta.ReportsMeta, {
-                    i18n_heading: (0, _localize.localize)('Profit table'),
-                    i18n_message: (0, _localize.localize)('View all trades purchased on your account, and a summary of your total profit/loss.')
+                    i18n_heading: (0, _localize.localize)('Statement'),
+                    i18n_message: (0, _localize.localize)('View all transactions on your account, including trades, deposits, and withdrawals.')
                 }),
                 is_loading && data.length === 0 || is_empty ? _react2.default.createElement(_placeholderComponent2.default, {
                     is_loading: is_loading,
@@ -138,18 +150,19 @@ var ProfitTable = function (_React$Component) {
                     is_empty: is_empty,
                     empty_message_component: _emptyTradeHistoryMessage2.default,
                     component_icon: component_icon,
-                    localized_message: (0, _localize.localize)('You have no trading activity yet.'),
-                    localized_period_message: (0, _localize.localize)('You have no trading activity for this period.')
+                    localized_message: (0, _localize.localize)('You have no transactions yet.'),
+                    localized_period_message: (0, _localize.localize)('You have no transactions for this period.')
                 }) : _react2.default.createElement(
                     _DataTable2.default,
                     {
-                        className: 'profit-table',
+                        className: 'statement',
                         data_source: data,
                         columns: columns,
                         onScroll: handleScroll,
-                        footer: totals,
-                        is_empty: is_empty,
-                        getRowAction: this.getRowAction
+                        getRowAction: function getRowAction(row) {
+                            return _this2.getRowAction(row);
+                        },
+                        is_empty: is_empty
                     },
                     _react2.default.createElement(_placeholderComponent2.default, {
                         is_loading: is_loading
@@ -159,12 +172,11 @@ var ProfitTable = function (_React$Component) {
         }
     }]);
 
-    return ProfitTable;
+    return Statement;
 }(_react2.default.Component);
 
-ProfitTable.propTypes = {
+Statement.propTypes = {
     component_icon: _propTypes2.default.string,
-    currency: _propTypes2.default.string,
     data: _mobxReact.PropTypes.arrayOrObservableArray,
     error: _propTypes2.default.string,
     handleScroll: _propTypes2.default.func,
@@ -173,8 +185,7 @@ ProfitTable.propTypes = {
     is_empty: _propTypes2.default.bool,
     is_loading: _propTypes2.default.bool,
     onMount: _propTypes2.default.func,
-    onUnmount: _propTypes2.default.func,
-    totals: _propTypes2.default.object
+    onUnmount: _propTypes2.default.func
 };
 
 exports.default = (0, _connect.connect)(function (_ref2) {
@@ -182,17 +193,16 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         client = _ref2.client;
     return {
         currency: client.currency,
-        data: modules.profit_table.data,
-        error: modules.profit_table.error,
-        handleScroll: modules.profit_table.handleScroll,
-        has_selected_date: modules.profit_table.has_selected_date,
-        is_empty: modules.profit_table.is_empty,
-        is_loading: modules.profit_table.is_loading,
-        onMount: modules.profit_table.onMount,
-        onUnmount: modules.profit_table.onUnmount,
-        totals: modules.profit_table.totals
+        data: modules.statement.data,
+        error: modules.statement.error,
+        handleScroll: modules.statement.handleScroll,
+        has_selected_date: modules.statement.has_selected_date,
+        is_empty: modules.statement.is_empty,
+        is_loading: modules.statement.is_loading,
+        onMount: modules.statement.onMount,
+        onUnmount: modules.statement.onUnmount
     };
-})((0, _reactRouter.withRouter)(ProfitTable));
+})((0, _reactRouterDom.withRouter)(Statement));
 
 /***/ })
 
