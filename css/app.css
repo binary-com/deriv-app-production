@@ -1126,6 +1126,9 @@ html {
         position: absolute; }
       .chart-container .cq-context div.ciq-chart div.stx-marker {
         z-index: 2; }
+        .chart-container .cq-context div.ciq-chart div.stx-marker:not(.chart-marker-line) {
+          -webkit-animation: fadeIn 0.2s;
+                  animation: fadeIn 0.2s; }
     .chart-container .cq-context div.cq-chart-control-left .cq-top-ui-widgets {
       width: calc(100% - 9em); }
   .chart-container div.debug-text {
@@ -1385,6 +1388,18 @@ html {
 
 .theme--dark .error__message {
   color: #7f8397; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 /** @define header */
 .header {
@@ -7522,13 +7537,6 @@ html {
   z-index: 10;
   top: 1em;
   right: 1em;
-  opacity: 0;
-  -webkit-transform: translate3d(0, calc(-100% - 2em), 0);
-          transform: translate3d(0, calc(-100% - 2em), 0);
-  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease;
-  transition: opacity 0.4s linear, -webkit-transform 0.4s ease;
-  transition: transform 0.4s ease, opacity 0.4s linear;
-  transition: transform 0.4s ease, opacity 0.4s linear, -webkit-transform 0.4s ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7541,14 +7549,6 @@ html {
   .info-box-container-icon, .info-box-container .info-box-longcode-icon {
     width: 32px;
     height: 32px; }
-  .info-box-container--enter-done {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 1; }
-  .info-box-container--enter, .info-box-container--exit {
-    -webkit-transform: translate3d(0, calc(-100% - 2em), 0);
-            transform: translate3d(0, calc(-100% - 2em), 0);
-    opacity: 0; }
   .info-box-container .info-box {
     position: relative;
     border-radius: 4px;
@@ -7714,7 +7714,7 @@ html {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  bottom: 20px; }
+  bottom: 2em; }
 
 /** @define digits */
 .digits {
@@ -7725,22 +7725,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  margin: 0 2.5em 0 1em;
-  -webkit-transform: translate3d(0, calc(100% + 2em), 0);
-          transform: translate3d(0, calc(100% + 2em), 0);
-  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease;
-  transition: opacity 0.4s linear, -webkit-transform 0.4s ease;
-  transition: transform 0.4s ease, opacity 0.4s linear;
-  transition: transform 0.4s ease, opacity 0.4s linear, -webkit-transform 0.4s ease;
-  opacity: 0; }
-  .digits--enter-done {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 1; }
-  .digits--enter, .digits--exit {
-    -webkit-transform: translate3d(0, calc(100% + 2em), 0);
-            transform: translate3d(0, calc(100% + 2em), 0);
-    opacity: 0; }
+  margin: 0 2.5em 0 1em; }
   .digits__digit {
     margin: 0 0.4em;
     text-align: center;
@@ -7765,8 +7750,10 @@ html {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      -webkit-transition: background-color 0.2s ease-in;
-      transition: background-color 0.2s ease-in; }
+      -webkit-transition: background-color 0.2s ease-out, -webkit-transform 0.1s ease-out;
+      transition: background-color 0.2s ease-out, -webkit-transform 0.1s ease-out;
+      transition: background-color 0.2s ease-out, transform 0.1s ease-out;
+      transition: background-color 0.2s ease-out, transform 0.1s ease-out, -webkit-transform 0.1s ease-out; }
       .theme--light .digits__digit-value {
         background-color: #f4f4f6;
         color: rgba(0, 0, 0, 0.8); }
@@ -7781,11 +7768,7 @@ html {
           background-color: #101320; }
       .digits__digit-value--latest {
         -webkit-transform: translateY(-8px);
-                transform: translateY(-8px);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
-        transition: -webkit-transform 0.2s ease-out;
-        transition: transform 0.2s ease-out;
-        transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+                transform: translateY(-8px); }
       .theme--light .digits__digit-value--win {
         background-color: #39b19d;
         color: #ffffff; }
@@ -7818,14 +7801,7 @@ html {
       top: -35px;
       left: -50%;
       right: -50%;
-      width: auto;
-      -webkit-transform: translateX(50%);
-              transform: translateX(50%);
-      -webkit-animation: bounce 0.8s forwards ease;
-              animation: bounce 0.8s forwards ease;
-      opacity: 1;
-      -webkit-transition: opacity 0.3s;
-      transition: opacity 0.3s; }
+      width: auto; }
       .digits__digit-spot-value {
         font-size: 1.4em;
         color: rgba(0, 0, 0, 0.8);
@@ -7862,7 +7838,7 @@ html {
   .digits__pointer {
     position: absolute;
     bottom: -12px;
-    padding: 0 1.2em;
+    padding: 0 12px;
     -webkit-transition: margin-left 0.25s ease;
     transition: margin-left 0.25s ease; }
   .digits__particles {
@@ -7918,40 +7894,6 @@ html {
     fill: #39b19d; }
   .digits__icon--loss .digits__icon-color {
     fill: #e31c4b; }
-
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translateY(35px);
-            transform: translateY(35px); }
-  30% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px); }
-  50% {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px); }
-  70% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
-
-@keyframes bounce {
-  0% {
-    -webkit-transform: translateY(35px);
-            transform: translateY(35px); }
-  30% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px); }
-  50% {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px); }
-  70% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
 
 @-webkit-keyframes blinking-white {
   50% {
@@ -8769,7 +8711,13 @@ html {
 .chart-marker-line {
   height: 94.5%;
   margin-bottom: 0.8em;
-  z-index: 0 !important; }
+  z-index: 0 !important;
+  bottom: -100%;
+  -webkit-transition: bottom 0.2s linear;
+  transition: bottom 0.2s linear; }
+  .chart-marker-line__no-transition {
+    -webkit-transition: none;
+    transition: none; }
   .chart-marker-line__wrapper {
     border-left-width: 2px;
     padding-left: 0.5em;
