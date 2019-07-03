@@ -5915,6 +5915,226 @@ html {
       content: '';
       width: 16px; }
 
+/** @define btn-purchase */
+.btn-purchase {
+  position: relative;
+  background-color: #2d9f93;
+  overflow: hidden;
+  height: 5.6em;
+  width: 100%;
+  margin: 5px 0 0;
+  padding: 0;
+  text-align: left;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1; }
+  .btn-purchase__text {
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: left;
+    line-height: 1.5; }
+  .btn-purchase__info {
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 10px;
+    height: 56px; }
+  .btn-purchase__info--left {
+    background-color: #39b19d;
+    width: 40%;
+    -webkit-transition: -webkit-transform linear 0.25s;
+    transition: -webkit-transform linear 0.25s;
+    transition: transform linear 0.25s;
+    transition: transform linear 0.25s, -webkit-transform linear 0.25s;
+    z-index: 2; }
+    .btn-purchase__info--left .btn-purchase__text_wrapper {
+      margin-left: 24px;
+      position: absolute; }
+    .btn-purchase__info--left .btn-purchase__icon_wrapper {
+      /* postcss-bem-linter: ignore */ }
+      .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill {
+        fill: #ffffff !important; }
+      .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill {
+        fill: #ffffff !important; }
+  .btn-purchase__info--right {
+    width: 45%;
+    padding-right: 1rem;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+    .btn-purchase__info--right .btn-purchase__text {
+      opacity: 1;
+      -webkit-transition: 0.3s;
+      transition: 0.3s; }
+  .btn-purchase__effect-detail {
+    position: absolute;
+    background-color: #39b19d;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    width: 116px;
+    height: 100%;
+    z-index: 1; }
+  .btn-purchase__effect-detail--arrow {
+    content: '';
+    width: 55px;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    height: 100%;
+    background: #39b19d;
+    left: 80px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: inline-block; }
+  .btn-purchase[disabled]:hover {
+    cursor: initial; }
+  .btn-purchase:hover:not(.btn-purchase--disabled):not([disabled]) {
+    -webkit-transform: translate3d(0, -4px, 0);
+            transform: translate3d(0, -4px, 0); }
+  .btn-purchase__type-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-transform: none;
+            transform: none; }
+  .btn-purchase__shadow-wrapper {
+    position: relative; }
+    .btn-purchase__shadow-wrapper .btn-purchase__box-shadow {
+      position: absolute;
+      width: 100%;
+      bottom: 14px;
+      height: 50%;
+      z-index: 0;
+      opacity: 0.9;
+      -webkit-box-shadow: 0 16px 14px 0 rgba(0, 0, 0, 0.24);
+              box-shadow: 0 16px 14px 0 rgba(0, 0, 0, 0.24);
+      -webkit-transition: opacity 0.25s linear;
+      transition: opacity 0.25s linear;
+      pointer-events: none; }
+    .btn-purchase__shadow-wrapper--disabled .btn-purchase__box-shadow {
+      opacity: 0; }
+    .btn-purchase__shadow-wrapper--disabled:hover {
+      -webkit-transform: none;
+              transform: none; }
+  .btn-purchase:active, .btn-purchase:focus {
+    -webkit-transform: translate3d(0, -4px, 0);
+            transform: translate3d(0, -4px, 0); }
+  .btn-purchase--swoosh {
+    -webkit-transform: translate3d(0, -4px, 0);
+            transform: translate3d(0, -4px, 0); }
+    .btn-purchase--swoosh .btn-purchase__type-wrapper {
+      -webkit-transform: translate3d(55px, 0, 0);
+              transform: translate3d(55px, 0, 0); }
+    .btn-purchase--swoosh .btn-purchase__effect-detail {
+      -webkit-transform: scale3d(3, 1, 1);
+              transform: scale3d(3, 1, 1); }
+      .btn-purchase--swoosh .btn-purchase__effect-detail--arrow {
+        -webkit-transform: translate3d(120px, 0, 0) rotate(45deg);
+                transform: translate3d(120px, 0, 0) rotate(45deg); }
+  .btn-purchase--disabled, .btn-purchase[disabled] {
+    cursor: default; }
+    .theme--light .btn-purchase--disabled, .theme--light .btn-purchase[disabled] {
+      background-color: #b3b3b3;
+      color: rgba(0, 0, 0, 0.16); }
+      .theme--light .btn-purchase--disabled .btn-purchase__info--left, .theme--light .btn-purchase[disabled] .btn-purchase__info--left {
+        background-color: #d6d6d6; }
+        .theme--light .btn-purchase--disabled .btn-purchase__info--left svg, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg {
+          /* postcss-bem-linter: ignore */
+          /* postcss-bem-linter: ignore */
+          /* postcss-bem-linter: ignore */
+          /* postcss-bem-linter: ignore */ }
+          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color1-fill, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color1-fill {
+            fill: rgba(0, 0, 0, 0.16); }
+          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color1-stroke, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color1-stroke {
+            stroke: rgba(0, 0, 0, 0.16); }
+          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color2-fill, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color2-fill {
+            fill: rgba(0, 0, 0, 0.16); }
+          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color2-stroke, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color2-stroke {
+            stroke: rgba(0, 0, 0, 0.16); }
+        .theme--light .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__icon_wrapper, .theme--light .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__icon_wrapper {
+          /* postcss-bem-linter: ignore */ }
+          .theme--light .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill, .theme--light .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill {
+            fill: rgba(0, 0, 0, 0.16) !important; }
+        .theme--light .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__text, .theme--light .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__text {
+          color: rgba(0, 0, 0, 0.16); }
+      .theme--light .btn-purchase--disabled .btn-purchase__effect-detail, .theme--light .btn-purchase[disabled] .btn-purchase__effect-detail {
+        background: #d6d6d6; }
+        .theme--light .btn-purchase--disabled .btn-purchase__effect-detail--arrow, .theme--light .btn-purchase[disabled] .btn-purchase__effect-detail--arrow {
+          background: #d6d6d6; }
+    .theme--dark .btn-purchase--disabled, .theme--dark .btn-purchase[disabled] {
+      background-color: #282a37;
+      color: rgba(127, 131, 151, 0.3); }
+      .theme--dark .btn-purchase--disabled .btn-purchase__info--left, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left {
+        background-color: #303342; }
+        .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg {
+          /* postcss-bem-linter: ignore */
+          /* postcss-bem-linter: ignore */
+          /* postcss-bem-linter: ignore */
+          /* postcss-bem-linter: ignore */ }
+          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color1-fill, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color1-fill {
+            fill: rgba(127, 131, 151, 0.3); }
+          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color1-stroke, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color1-stroke {
+            stroke: rgba(127, 131, 151, 0.3); }
+          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color2-fill, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color2-fill {
+            fill: rgba(127, 131, 151, 0.3); }
+          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color2-stroke, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color2-stroke {
+            stroke: rgba(127, 131, 151, 0.3); }
+        .theme--dark .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__icon_wrapper, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__icon_wrapper {
+          /* postcss-bem-linter: ignore */ }
+          .theme--dark .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill {
+            fill: rgba(127, 131, 151, 0.3) !important; }
+        .theme--dark .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__text, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__text {
+          color: rgba(127, 131, 151, 0.3); }
+      .theme--dark .btn-purchase--disabled .btn-purchase__effect-detail, .theme--dark .btn-purchase[disabled] .btn-purchase__effect-detail {
+        background: #303342; }
+        .theme--dark .btn-purchase--disabled .btn-purchase__effect-detail--arrow, .theme--dark .btn-purchase[disabled] .btn-purchase__effect-detail--arrow {
+          background: #303342; }
+  .btn-purchase--animated--slide .btn-purchase__icon_wrapper {
+    width: 16px;
+    height: 16px; }
+  .btn-purchase--animated--slide .btn-purchase__text_wrapper {
+    width: 56px;
+    height: 8px; }
+    .btn-purchase--animated--slide .btn-purchase__text_wrapper .btn-purchase__text {
+      display: block; }
+  .btn-purchase--animated--fade .btn-purchase__info--right .btn-purchase__text {
+    opacity: 0; }
+  .btn-purchase__shadow-wrapper:hover:after {
+    opacity: 0; }
+
 .radio-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7154,12 +7374,12 @@ html {
       fill: none; }
     .theme--light .popover__target__icon--disabled .info .color2-stroke, .popover__target__icon--disabled .theme--light .info .color2-stroke, .theme--light .disabled.advanced-simple-toggle__icon .color2-stroke, .theme--light .disabled.footer__icon .color2-stroke, .theme--light .contract-drawer svg.disabled .color2-stroke, .contract-drawer .theme--light svg.disabled .color2-stroke, .theme--light .positions-drawer__icon-close svg.disabled .color2-stroke, .positions-drawer__icon-close .theme--light svg.disabled .color2-stroke, .theme--light .disabled.dropdown__select-arrow .color2-stroke, .theme--light .disabled.input-wrapper__icon .color2-stroke, .theme--light .disabled.time-picker__icon .color2-stroke, .theme--light .disabled.acc-info__select-arrow .color2-stroke, .theme--light .disabled.acc-switcher__logout-icon .color2-stroke, .theme--light .disabled.calendar__icon .color2-stroke, .theme--light .calendar__nav--disabled .calendar__icon .color2-stroke, .calendar__nav--disabled .theme--light .calendar__icon .color2-stroke, .theme--light .disabled.contract-type-widget__select-arrow .color2-stroke, .theme--light .trade-type-info-dialog__header svg.disabled .color2-stroke, .trade-type-info-dialog__header .theme--light svg.disabled .color2-stroke, .theme--light .disabled.trade-type-info-navigation__icon .color2-stroke, .theme--light .disabled.datepicker__icon .color2-stroke, .theme--light .disabled.portfolio-empty__icon .color2-stroke {
       stroke: none; }
-  .theme--light .popover__target__icon .info:hover, .popover__target__icon .theme--light .info:hover, .theme--light .white.advanced-simple-toggle__icon, .theme--light .white.footer__icon, .theme--light .contract-drawer svg.white, .contract-drawer .theme--light svg.white, .theme--light .positions-drawer__icon-close svg.white, .positions-drawer__icon-close .theme--light svg.white, .theme--light .white.dropdown__select-arrow, .theme--light .white.input-wrapper__icon, .theme--light .white.time-picker__icon, .theme--light .white.acc-info__select-arrow, .theme--light .white.acc-switcher__logout-icon, .theme--light .white.calendar__icon, .theme--light .white.contract-type-widget__select-arrow, .theme--light .contract-type-item__icon:hover svg, .contract-type-item__icon:hover .theme--light svg, .theme--light .trade-type-info-dialog__header svg.white, .trade-type-info-dialog__header .theme--light svg.white, .theme--light .white.trade-type-info-navigation__icon, .theme--light .white.datepicker__icon, .theme--light .white.portfolio-empty__icon, .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper, .btn-purchase__info--left .theme--light .btn-purchase__icon_wrapper {
+  .theme--light .popover__target__icon .info:hover, .popover__target__icon .theme--light .info:hover, .theme--light .white.advanced-simple-toggle__icon, .theme--light .white.footer__icon, .theme--light .contract-drawer svg.white, .contract-drawer .theme--light svg.white, .theme--light .positions-drawer__icon-close svg.white, .positions-drawer__icon-close .theme--light svg.white, .theme--light .white.dropdown__select-arrow, .theme--light .white.input-wrapper__icon, .theme--light .white.time-picker__icon, .theme--light .white.acc-info__select-arrow, .theme--light .white.acc-switcher__logout-icon, .theme--light .white.calendar__icon, .theme--light .white.contract-type-widget__select-arrow, .theme--light .contract-type-item__icon:hover svg, .contract-type-item__icon:hover .theme--light svg, .theme--light .trade-type-info-dialog__header svg.white, .trade-type-info-dialog__header .theme--light svg.white, .theme--light .white.trade-type-info-navigation__icon, .theme--light .white.datepicker__icon, .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper, .btn-purchase__info--left .theme--light .btn-purchase__icon_wrapper, .theme--light .white.portfolio-empty__icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .theme--light .popover__target__icon .info:hover .color1-fill, .popover__target__icon .theme--light .info:hover .color1-fill, .theme--light .white.advanced-simple-toggle__icon .color1-fill, .theme--light .white.footer__icon .color1-fill, .theme--light .contract-drawer svg.white .color1-fill, .contract-drawer .theme--light svg.white .color1-fill, .theme--light .positions-drawer__icon-close svg.white .color1-fill, .positions-drawer__icon-close .theme--light svg.white .color1-fill, .theme--light .white.dropdown__select-arrow .color1-fill, .theme--light .white.input-wrapper__icon .color1-fill, .theme--light .white.time-picker__icon .color1-fill, .theme--light .white.acc-info__select-arrow .color1-fill, .theme--light .white.acc-switcher__logout-icon .color1-fill, .theme--light .white.calendar__icon .color1-fill, .theme--light .white.contract-type-widget__select-arrow .color1-fill, .theme--light .contract-type-item__icon:hover svg .color1-fill, .contract-type-item__icon:hover .theme--light svg .color1-fill, .theme--light .trade-type-info-dialog__header svg.white .color1-fill, .trade-type-info-dialog__header .theme--light svg.white .color1-fill, .theme--light .white.trade-type-info-navigation__icon .color1-fill, .theme--light .white.datepicker__icon .color1-fill, .theme--light .white.portfolio-empty__icon .color1-fill, .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill, .btn-purchase__info--left .theme--light .btn-purchase__icon_wrapper .color1-fill {
+    .theme--light .popover__target__icon .info:hover .color1-fill, .popover__target__icon .theme--light .info:hover .color1-fill, .theme--light .white.advanced-simple-toggle__icon .color1-fill, .theme--light .white.footer__icon .color1-fill, .theme--light .contract-drawer svg.white .color1-fill, .contract-drawer .theme--light svg.white .color1-fill, .theme--light .positions-drawer__icon-close svg.white .color1-fill, .positions-drawer__icon-close .theme--light svg.white .color1-fill, .theme--light .white.dropdown__select-arrow .color1-fill, .theme--light .white.input-wrapper__icon .color1-fill, .theme--light .white.time-picker__icon .color1-fill, .theme--light .white.acc-info__select-arrow .color1-fill, .theme--light .white.acc-switcher__logout-icon .color1-fill, .theme--light .white.calendar__icon .color1-fill, .theme--light .white.contract-type-widget__select-arrow .color1-fill, .theme--light .contract-type-item__icon:hover svg .color1-fill, .contract-type-item__icon:hover .theme--light svg .color1-fill, .theme--light .trade-type-info-dialog__header svg.white .color1-fill, .trade-type-info-dialog__header .theme--light svg.white .color1-fill, .theme--light .white.trade-type-info-navigation__icon .color1-fill, .theme--light .white.datepicker__icon .color1-fill, .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill, .btn-purchase__info--left .theme--light .btn-purchase__icon_wrapper .color1-fill, .theme--light .white.portfolio-empty__icon .color1-fill {
       fill: rgba(0, 0, 0, 0.8); }
-    .theme--light .popover__target__icon .info:hover .color1-stroke, .popover__target__icon .theme--light .info:hover .color1-stroke, .theme--light .white.advanced-simple-toggle__icon .color1-stroke, .theme--light .white.footer__icon .color1-stroke, .theme--light .contract-drawer svg.white .color1-stroke, .contract-drawer .theme--light svg.white .color1-stroke, .theme--light .positions-drawer__icon-close svg.white .color1-stroke, .positions-drawer__icon-close .theme--light svg.white .color1-stroke, .theme--light .white.dropdown__select-arrow .color1-stroke, .theme--light .white.input-wrapper__icon .color1-stroke, .theme--light .white.time-picker__icon .color1-stroke, .theme--light .white.acc-info__select-arrow .color1-stroke, .theme--light .white.acc-switcher__logout-icon .color1-stroke, .theme--light .white.calendar__icon .color1-stroke, .theme--light .white.contract-type-widget__select-arrow .color1-stroke, .theme--light .contract-type-item__icon:hover svg .color1-stroke, .contract-type-item__icon:hover .theme--light svg .color1-stroke, .theme--light .trade-type-info-dialog__header svg.white .color1-stroke, .trade-type-info-dialog__header .theme--light svg.white .color1-stroke, .theme--light .white.trade-type-info-navigation__icon .color1-stroke, .theme--light .white.datepicker__icon .color1-stroke, .theme--light .white.portfolio-empty__icon .color1-stroke, .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-stroke, .btn-purchase__info--left .theme--light .btn-purchase__icon_wrapper .color1-stroke {
+    .theme--light .popover__target__icon .info:hover .color1-stroke, .popover__target__icon .theme--light .info:hover .color1-stroke, .theme--light .white.advanced-simple-toggle__icon .color1-stroke, .theme--light .white.footer__icon .color1-stroke, .theme--light .contract-drawer svg.white .color1-stroke, .contract-drawer .theme--light svg.white .color1-stroke, .theme--light .positions-drawer__icon-close svg.white .color1-stroke, .positions-drawer__icon-close .theme--light svg.white .color1-stroke, .theme--light .white.dropdown__select-arrow .color1-stroke, .theme--light .white.input-wrapper__icon .color1-stroke, .theme--light .white.time-picker__icon .color1-stroke, .theme--light .white.acc-info__select-arrow .color1-stroke, .theme--light .white.acc-switcher__logout-icon .color1-stroke, .theme--light .white.calendar__icon .color1-stroke, .theme--light .white.contract-type-widget__select-arrow .color1-stroke, .theme--light .contract-type-item__icon:hover svg .color1-stroke, .contract-type-item__icon:hover .theme--light svg .color1-stroke, .theme--light .trade-type-info-dialog__header svg.white .color1-stroke, .trade-type-info-dialog__header .theme--light svg.white .color1-stroke, .theme--light .white.trade-type-info-navigation__icon .color1-stroke, .theme--light .white.datepicker__icon .color1-stroke, .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-stroke, .btn-purchase__info--left .theme--light .btn-purchase__icon_wrapper .color1-stroke, .theme--light .white.portfolio-empty__icon .color1-stroke {
       stroke: rgba(0, 0, 0, 0.8); }
   .theme--light .border_hover_color.advanced-simple-toggle__icon, .theme--light .border_hover_color.footer__icon, .theme--light .contract-drawer svg.border_hover_color, .contract-drawer .theme--light svg.border_hover_color, .theme--light .positions-drawer__icon-close svg.border_hover_color, .positions-drawer__icon-close .theme--light svg.border_hover_color, .theme--light .border_hover_color.dropdown__select-arrow, .theme--light .border_hover_color.input-wrapper__icon, .theme--light .border_hover_color.time-picker__icon, .theme--light .border_hover_color.acc-info__select-arrow, .theme--light .border_hover_color.acc-switcher__logout-icon, .theme--light .border_hover_color.calendar__icon, .theme--light .border_hover_color.contract-type-widget__select-arrow, .theme--light .trade-type-info-dialog__header svg.border_hover_color, .trade-type-info-dialog__header .theme--light svg.border_hover_color, .theme--light .border_hover_color.trade-type-info-navigation__icon, .theme--light .border_hover_color.datepicker__icon, .theme--light .dialog-header__close, .theme--light .border_hover_color.portfolio-empty__icon {
     /* postcss-bem-linter: ignore */
@@ -7227,12 +7447,12 @@ html {
       fill: none; }
     .theme--dark .popover__target__icon--disabled .info .color2-stroke, .popover__target__icon--disabled .theme--dark .info .color2-stroke, .theme--dark .disabled.advanced-simple-toggle__icon .color2-stroke, .theme--dark .disabled.footer__icon .color2-stroke, .theme--dark .contract-drawer svg.disabled .color2-stroke, .contract-drawer .theme--dark svg.disabled .color2-stroke, .theme--dark .positions-drawer__icon-close svg.disabled .color2-stroke, .positions-drawer__icon-close .theme--dark svg.disabled .color2-stroke, .theme--dark .disabled.dropdown__select-arrow .color2-stroke, .theme--dark .disabled.input-wrapper__icon .color2-stroke, .theme--dark .disabled.time-picker__icon .color2-stroke, .theme--dark .disabled.acc-info__select-arrow .color2-stroke, .theme--dark .disabled.acc-switcher__logout-icon .color2-stroke, .theme--dark .disabled.calendar__icon .color2-stroke, .theme--dark .calendar__nav--disabled .calendar__icon .color2-stroke, .calendar__nav--disabled .theme--dark .calendar__icon .color2-stroke, .theme--dark .disabled.contract-type-widget__select-arrow .color2-stroke, .theme--dark .trade-type-info-dialog__header svg.disabled .color2-stroke, .trade-type-info-dialog__header .theme--dark svg.disabled .color2-stroke, .theme--dark .disabled.trade-type-info-navigation__icon .color2-stroke, .theme--dark .disabled.datepicker__icon .color2-stroke, .theme--dark .disabled.portfolio-empty__icon .color2-stroke {
       stroke: none; }
-  .theme--dark .popover__target__icon .info:hover, .popover__target__icon .theme--dark .info:hover, .theme--dark .white.advanced-simple-toggle__icon, .theme--dark .white.footer__icon, .theme--dark .contract-drawer svg.white, .contract-drawer .theme--dark svg.white, .theme--dark .positions-drawer__icon-close svg.white, .positions-drawer__icon-close .theme--dark svg.white, .theme--dark .white.dropdown__select-arrow, .theme--dark .white.input-wrapper__icon, .theme--dark .white.time-picker__icon, .theme--dark .white.acc-info__select-arrow, .theme--dark .white.acc-switcher__logout-icon, .theme--dark .white.calendar__icon, .theme--dark .white.contract-type-widget__select-arrow, .theme--dark .contract-type-item__icon:hover svg, .contract-type-item__icon:hover .theme--dark svg, .theme--dark .trade-type-info-dialog__header svg.white, .trade-type-info-dialog__header .theme--dark svg.white, .theme--dark .white.trade-type-info-navigation__icon, .theme--dark .white.datepicker__icon, .theme--dark .white.portfolio-empty__icon, .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper, .btn-purchase__info--left .theme--dark .btn-purchase__icon_wrapper {
+  .theme--dark .popover__target__icon .info:hover, .popover__target__icon .theme--dark .info:hover, .theme--dark .white.advanced-simple-toggle__icon, .theme--dark .white.footer__icon, .theme--dark .contract-drawer svg.white, .contract-drawer .theme--dark svg.white, .theme--dark .positions-drawer__icon-close svg.white, .positions-drawer__icon-close .theme--dark svg.white, .theme--dark .white.dropdown__select-arrow, .theme--dark .white.input-wrapper__icon, .theme--dark .white.time-picker__icon, .theme--dark .white.acc-info__select-arrow, .theme--dark .white.acc-switcher__logout-icon, .theme--dark .white.calendar__icon, .theme--dark .white.contract-type-widget__select-arrow, .theme--dark .contract-type-item__icon:hover svg, .contract-type-item__icon:hover .theme--dark svg, .theme--dark .trade-type-info-dialog__header svg.white, .trade-type-info-dialog__header .theme--dark svg.white, .theme--dark .white.trade-type-info-navigation__icon, .theme--dark .white.datepicker__icon, .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper, .btn-purchase__info--left .theme--dark .btn-purchase__icon_wrapper, .theme--dark .white.portfolio-empty__icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .theme--dark .popover__target__icon .info:hover .color1-fill, .popover__target__icon .theme--dark .info:hover .color1-fill, .theme--dark .white.advanced-simple-toggle__icon .color1-fill, .theme--dark .white.footer__icon .color1-fill, .theme--dark .contract-drawer svg.white .color1-fill, .contract-drawer .theme--dark svg.white .color1-fill, .theme--dark .positions-drawer__icon-close svg.white .color1-fill, .positions-drawer__icon-close .theme--dark svg.white .color1-fill, .theme--dark .white.dropdown__select-arrow .color1-fill, .theme--dark .white.input-wrapper__icon .color1-fill, .theme--dark .white.time-picker__icon .color1-fill, .theme--dark .white.acc-info__select-arrow .color1-fill, .theme--dark .white.acc-switcher__logout-icon .color1-fill, .theme--dark .white.calendar__icon .color1-fill, .theme--dark .white.contract-type-widget__select-arrow .color1-fill, .theme--dark .contract-type-item__icon:hover svg .color1-fill, .contract-type-item__icon:hover .theme--dark svg .color1-fill, .theme--dark .trade-type-info-dialog__header svg.white .color1-fill, .trade-type-info-dialog__header .theme--dark svg.white .color1-fill, .theme--dark .white.trade-type-info-navigation__icon .color1-fill, .theme--dark .white.datepicker__icon .color1-fill, .theme--dark .white.portfolio-empty__icon .color1-fill, .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill, .btn-purchase__info--left .theme--dark .btn-purchase__icon_wrapper .color1-fill {
+    .theme--dark .popover__target__icon .info:hover .color1-fill, .popover__target__icon .theme--dark .info:hover .color1-fill, .theme--dark .white.advanced-simple-toggle__icon .color1-fill, .theme--dark .white.footer__icon .color1-fill, .theme--dark .contract-drawer svg.white .color1-fill, .contract-drawer .theme--dark svg.white .color1-fill, .theme--dark .positions-drawer__icon-close svg.white .color1-fill, .positions-drawer__icon-close .theme--dark svg.white .color1-fill, .theme--dark .white.dropdown__select-arrow .color1-fill, .theme--dark .white.input-wrapper__icon .color1-fill, .theme--dark .white.time-picker__icon .color1-fill, .theme--dark .white.acc-info__select-arrow .color1-fill, .theme--dark .white.acc-switcher__logout-icon .color1-fill, .theme--dark .white.calendar__icon .color1-fill, .theme--dark .white.contract-type-widget__select-arrow .color1-fill, .theme--dark .contract-type-item__icon:hover svg .color1-fill, .contract-type-item__icon:hover .theme--dark svg .color1-fill, .theme--dark .trade-type-info-dialog__header svg.white .color1-fill, .trade-type-info-dialog__header .theme--dark svg.white .color1-fill, .theme--dark .white.trade-type-info-navigation__icon .color1-fill, .theme--dark .white.datepicker__icon .color1-fill, .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill, .btn-purchase__info--left .theme--dark .btn-purchase__icon_wrapper .color1-fill, .theme--dark .white.portfolio-empty__icon .color1-fill {
       fill: #ffffff; }
-    .theme--dark .popover__target__icon .info:hover .color1-stroke, .popover__target__icon .theme--dark .info:hover .color1-stroke, .theme--dark .white.advanced-simple-toggle__icon .color1-stroke, .theme--dark .white.footer__icon .color1-stroke, .theme--dark .contract-drawer svg.white .color1-stroke, .contract-drawer .theme--dark svg.white .color1-stroke, .theme--dark .positions-drawer__icon-close svg.white .color1-stroke, .positions-drawer__icon-close .theme--dark svg.white .color1-stroke, .theme--dark .white.dropdown__select-arrow .color1-stroke, .theme--dark .white.input-wrapper__icon .color1-stroke, .theme--dark .white.time-picker__icon .color1-stroke, .theme--dark .white.acc-info__select-arrow .color1-stroke, .theme--dark .white.acc-switcher__logout-icon .color1-stroke, .theme--dark .white.calendar__icon .color1-stroke, .theme--dark .white.contract-type-widget__select-arrow .color1-stroke, .theme--dark .contract-type-item__icon:hover svg .color1-stroke, .contract-type-item__icon:hover .theme--dark svg .color1-stroke, .theme--dark .trade-type-info-dialog__header svg.white .color1-stroke, .trade-type-info-dialog__header .theme--dark svg.white .color1-stroke, .theme--dark .white.trade-type-info-navigation__icon .color1-stroke, .theme--dark .white.datepicker__icon .color1-stroke, .theme--dark .white.portfolio-empty__icon .color1-stroke, .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-stroke, .btn-purchase__info--left .theme--dark .btn-purchase__icon_wrapper .color1-stroke {
+    .theme--dark .popover__target__icon .info:hover .color1-stroke, .popover__target__icon .theme--dark .info:hover .color1-stroke, .theme--dark .white.advanced-simple-toggle__icon .color1-stroke, .theme--dark .white.footer__icon .color1-stroke, .theme--dark .contract-drawer svg.white .color1-stroke, .contract-drawer .theme--dark svg.white .color1-stroke, .theme--dark .positions-drawer__icon-close svg.white .color1-stroke, .positions-drawer__icon-close .theme--dark svg.white .color1-stroke, .theme--dark .white.dropdown__select-arrow .color1-stroke, .theme--dark .white.input-wrapper__icon .color1-stroke, .theme--dark .white.time-picker__icon .color1-stroke, .theme--dark .white.acc-info__select-arrow .color1-stroke, .theme--dark .white.acc-switcher__logout-icon .color1-stroke, .theme--dark .white.calendar__icon .color1-stroke, .theme--dark .white.contract-type-widget__select-arrow .color1-stroke, .theme--dark .contract-type-item__icon:hover svg .color1-stroke, .contract-type-item__icon:hover .theme--dark svg .color1-stroke, .theme--dark .trade-type-info-dialog__header svg.white .color1-stroke, .trade-type-info-dialog__header .theme--dark svg.white .color1-stroke, .theme--dark .white.trade-type-info-navigation__icon .color1-stroke, .theme--dark .white.datepicker__icon .color1-stroke, .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-stroke, .btn-purchase__info--left .theme--dark .btn-purchase__icon_wrapper .color1-stroke, .theme--dark .white.portfolio-empty__icon .color1-stroke {
       stroke: #ffffff; }
   .theme--dark .border_hover_color.advanced-simple-toggle__icon, .theme--dark .border_hover_color.footer__icon, .theme--dark .contract-drawer svg.border_hover_color, .contract-drawer .theme--dark svg.border_hover_color, .theme--dark .positions-drawer__icon-close svg.border_hover_color, .positions-drawer__icon-close .theme--dark svg.border_hover_color, .theme--dark .border_hover_color.dropdown__select-arrow, .theme--dark .border_hover_color.input-wrapper__icon, .theme--dark .border_hover_color.time-picker__icon, .theme--dark .border_hover_color.acc-info__select-arrow, .theme--dark .border_hover_color.acc-switcher__logout-icon, .theme--dark .border_hover_color.calendar__icon, .theme--dark .border_hover_color.contract-type-widget__select-arrow, .theme--dark .trade-type-info-dialog__header svg.border_hover_color, .trade-type-info-dialog__header .theme--dark svg.border_hover_color, .theme--dark .border_hover_color.trade-type-info-navigation__icon, .theme--dark .border_hover_color.datepicker__icon, .theme--dark .dialog-header__close, .theme--dark .border_hover_color.portfolio-empty__icon {
     /* postcss-bem-linter: ignore */
@@ -8766,13 +8986,13 @@ html {
     -webkit-transform: translateX(100%);
             transform: translateX(100%); } }
 
-.loader, .trade-container__price-info--slide, .btn-purchase--animated--slide .btn-purchase__icon_wrapper, .btn-purchase--animated--slide .btn-purchase__text_wrapper {
+.loader, .btn-purchase--animated--slide .btn-purchase__icon_wrapper, .btn-purchase--animated--slide .btn-purchase__text_wrapper, .trade-container__price-info--slide {
   overflow: hidden; }
-  .theme--light .loader, .theme--light .trade-container__price-info--slide, .theme--light .btn-purchase--animated--slide .btn-purchase__icon_wrapper, .btn-purchase--animated--slide .theme--light .btn-purchase__icon_wrapper, .theme--light .btn-purchase--animated--slide .btn-purchase__text_wrapper, .btn-purchase--animated--slide .theme--light .btn-purchase__text_wrapper {
+  .theme--light .loader, .theme--light .btn-purchase--animated--slide .btn-purchase__icon_wrapper, .btn-purchase--animated--slide .theme--light .btn-purchase__icon_wrapper, .theme--light .btn-purchase--animated--slide .btn-purchase__text_wrapper, .btn-purchase--animated--slide .theme--light .btn-purchase__text_wrapper, .theme--light .trade-container__price-info--slide {
     background-color: rgba(0, 0, 0, 0.16); }
-  .theme--dark .loader, .theme--dark .trade-container__price-info--slide, .theme--dark .btn-purchase--animated--slide .btn-purchase__icon_wrapper, .btn-purchase--animated--slide .theme--dark .btn-purchase__icon_wrapper, .theme--dark .btn-purchase--animated--slide .btn-purchase__text_wrapper, .btn-purchase--animated--slide .theme--dark .btn-purchase__text_wrapper {
+  .theme--dark .loader, .theme--dark .btn-purchase--animated--slide .btn-purchase__icon_wrapper, .btn-purchase--animated--slide .theme--dark .btn-purchase__icon_wrapper, .theme--dark .btn-purchase--animated--slide .btn-purchase__text_wrapper, .btn-purchase--animated--slide .theme--dark .btn-purchase__text_wrapper, .theme--dark .trade-container__price-info--slide {
     background-color: rgba(255, 255, 255, 0.16); }
-  .loader--loading, .trade-container__price-info--slide .trade-container__price-info-basis, .btn-purchase--animated--slide .btn-purchase__icon, .btn-purchase--animated--slide .btn-purchase__text {
+  .loader--loading, .btn-purchase--animated--slide .btn-purchase__icon, .btn-purchase--animated--slide .btn-purchase__text, .trade-container__price-info--slide .trade-container__price-info-basis {
     width: inherit;
     height: inherit;
     -webkit-animation: slide 1s cubic-bezier(1, 0, 0.5, 0) infinite;
@@ -9061,163 +9281,6 @@ html {
     left: -2px; }
   .purchase-container__popover-bubble {
     width: 220px; }
-
-/** @define btn-purchase */
-.btn-purchase {
-  position: relative;
-  background-color: #2d9f93;
-  overflow: hidden;
-  height: 5.6em;
-  width: 100%;
-  margin: 5px 0 0;
-  padding: 0;
-  text-align: left;
-  -webkit-transition: -webkit-transform 0.25s ease;
-  transition: -webkit-transform 0.25s ease;
-  transition: transform 0.25s ease;
-  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
-  z-index: 1; }
-  .btn-purchase__text {
-    font-size: 1.4em;
-    color: #ffffff;
-    font-weight: 700;
-    text-transform: capitalize;
-    text-align: left;
-    line-height: 1.5; }
-  .btn-purchase__info {
-    color: #ffffff;
-    text-align: left;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-left: 10px;
-    height: 56px; }
-  .btn-purchase__info--left {
-    background-color: #39b19d;
-    width: 60%;
-    float: left; }
-    .btn-purchase__info--left .btn-purchase__text_wrapper {
-      margin-left: 24px;
-      position: absolute; }
-    .btn-purchase__info--left .btn-purchase__icon_wrapper {
-      /* postcss-bem-linter: ignore */ }
-      .theme--light .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill {
-        fill: #ffffff; }
-      .theme--dark .btn-purchase__info--left .btn-purchase__icon_wrapper .color1-fill {
-        fill: #ffffff; }
-  .btn-purchase__info--right {
-    width: 40%;
-    padding-left: 10%;
-    padding-right: 10px;
-    float: right;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
-    background-color: transparent; }
-    .btn-purchase__info--right .btn-purchase__text {
-      opacity: 1;
-      -webkit-transition: 0.3s;
-      transition: 0.3s; }
-  .btn-purchase__effect-detail {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 28px 0 28px 14px;
-    border-color: transparent transparent transparent #39b19d;
-    left: 60%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: inline-block; }
-  .btn-purchase[disabled]:hover {
-    cursor: initial; }
-  .btn-purchase:hover:not(.btn-purchase--disabled):not([disabled]) {
-    -webkit-transform: translate3d(0, -4px, 0);
-            transform: translate3d(0, -4px, 0); }
-  .btn-purchase__shadow-wrapper {
-    position: relative; }
-    .btn-purchase__shadow-wrapper .btn-purchase__box-shadow {
-      position: absolute;
-      width: 100%;
-      bottom: 14px;
-      height: 50%;
-      z-index: 0;
-      opacity: 0.9;
-      -webkit-box-shadow: 0 16px 14px 0 rgba(0, 0, 0, 0.24);
-              box-shadow: 0 16px 14px 0 rgba(0, 0, 0, 0.24);
-      -webkit-transition: opacity 0.25s linear;
-      transition: opacity 0.25s linear;
-      pointer-events: none; }
-    .btn-purchase__shadow-wrapper--disabled .btn-purchase__box-shadow {
-      opacity: 0; }
-    .btn-purchase__shadow-wrapper--disabled:hover {
-      -webkit-transform: none;
-              transform: none; }
-  .btn-purchase--disabled, .btn-purchase[disabled] {
-    cursor: default; }
-    .theme--light .btn-purchase--disabled, .theme--light .btn-purchase[disabled] {
-      background-color: #b3b3b3;
-      color: rgba(0, 0, 0, 0.16); }
-      .theme--light .btn-purchase--disabled .btn-purchase__info--left, .theme--light .btn-purchase[disabled] .btn-purchase__info--left {
-        background-color: #d6d6d6; }
-        .theme--light .btn-purchase--disabled .btn-purchase__info--left svg, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg {
-          /* postcss-bem-linter: ignore */
-          /* postcss-bem-linter: ignore */
-          /* postcss-bem-linter: ignore */
-          /* postcss-bem-linter: ignore */ }
-          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color1-fill, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color1-fill {
-            fill: rgba(0, 0, 0, 0.16); }
-          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color1-stroke, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color1-stroke {
-            stroke: rgba(0, 0, 0, 0.16); }
-          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color2-fill, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color2-fill {
-            fill: rgba(0, 0, 0, 0.16); }
-          .theme--light .btn-purchase--disabled .btn-purchase__info--left svg .color2-stroke, .theme--light .btn-purchase[disabled] .btn-purchase__info--left svg .color2-stroke {
-            stroke: rgba(0, 0, 0, 0.16); }
-        .theme--light .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__text, .theme--light .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__text {
-          color: rgba(0, 0, 0, 0.16); }
-      .theme--light .btn-purchase--disabled .btn-purchase__effect-detail, .theme--light .btn-purchase[disabled] .btn-purchase__effect-detail {
-        border-color: transparent transparent transparent #d6d6d6; }
-    .theme--dark .btn-purchase--disabled, .theme--dark .btn-purchase[disabled] {
-      background-color: #282a37;
-      color: rgba(127, 131, 151, 0.3); }
-      .theme--dark .btn-purchase--disabled .btn-purchase__info--left, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left {
-        background-color: #303342; }
-        .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg {
-          /* postcss-bem-linter: ignore */
-          /* postcss-bem-linter: ignore */
-          /* postcss-bem-linter: ignore */
-          /* postcss-bem-linter: ignore */ }
-          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color1-fill, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color1-fill {
-            fill: rgba(127, 131, 151, 0.3); }
-          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color1-stroke, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color1-stroke {
-            stroke: rgba(127, 131, 151, 0.3); }
-          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color2-fill, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color2-fill {
-            fill: rgba(127, 131, 151, 0.3); }
-          .theme--dark .btn-purchase--disabled .btn-purchase__info--left svg .color2-stroke, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left svg .color2-stroke {
-            stroke: rgba(127, 131, 151, 0.3); }
-        .theme--dark .btn-purchase--disabled .btn-purchase__info--left .btn-purchase__text, .theme--dark .btn-purchase[disabled] .btn-purchase__info--left .btn-purchase__text {
-          color: rgba(127, 131, 151, 0.3); }
-      .theme--dark .btn-purchase--disabled .btn-purchase__effect-detail, .theme--dark .btn-purchase[disabled] .btn-purchase__effect-detail {
-        border-color: transparent transparent transparent #303342; }
-  .btn-purchase--animated--slide .btn-purchase__icon_wrapper {
-    width: 16px;
-    height: 16px; }
-  .btn-purchase--animated--slide .btn-purchase__text_wrapper {
-    width: 56px;
-    height: 8px; }
-    .btn-purchase--animated--slide .btn-purchase__text_wrapper .btn-purchase__text {
-      display: block; }
-  .btn-purchase--animated--fade .btn-purchase__info--right .btn-purchase__text {
-    opacity: 0; }
-  .btn-purchase__shadow-wrapper:hover:after {
-    opacity: 0; }
 
 /** @define duration-container */
 .duration-container {
