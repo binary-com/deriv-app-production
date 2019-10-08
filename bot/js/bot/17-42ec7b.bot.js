@@ -1,0 +1,2 @@
+(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[17],{589:function(e){e.exports=JSON.parse('{"text":["Performs the following operations between two numbers.","Available operations:","- Addition","- Subtraction","- Multiplication","- Division","- Raises the first number to the power of the second number"]}')}}]);
+//# sourceMappingURL=17-42ec7b.bot.js.map
