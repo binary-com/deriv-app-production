@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[34],{606:function(e){e.exports=JSON.parse('{"text":["This block converts the number of seconds since the Unix Epoch to a date and time format such as 2019-08-01 00:00:00.","Example:","In this example, your bot will print date and time to Journal."]}')}}]);
-//# sourceMappingURL=34-8e18d3.bot.js.map
