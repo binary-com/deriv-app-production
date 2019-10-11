@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[21],{593:function(e){e.exports=JSON.parse('{"text":["This block returns the list of candles. Each candle has 4 properties: high, low, open, close, and open time.","Example:","In this example open prices are extracted from the candle list into the variable \\"cl\\" with the help of another block."]}')}}]);
-//# sourceMappingURL=21-a1feaa.bot.js.map
