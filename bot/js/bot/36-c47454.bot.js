@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[36],{613:function(o){o.exports=JSON.parse('{"text":["This block will transfer the control back to the Purchase conditions block, enabling you to purchase another contract without manually stopping and restarting your bot.","Example:"]}')}}]);
-//# sourceMappingURL=36-c47454.bot.js.map
