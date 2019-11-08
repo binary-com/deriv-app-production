@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[11],{586:function(e){e.exports=JSON.parse('{"text":["Here is where you can decide to sell your contract before it expires. Only one copy of this block is allowed.","Example:"]}')}}]);
-//# sourceMappingURL=11-f1612e.bot.js.map
