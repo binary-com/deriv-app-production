@@ -1,0 +1,2 @@
+(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[23],{434:function(e){e.exports=JSON.parse('{"text":["This block gives you the selected candle value from a list of candles. You can choose from open price, close price, high price, low price, and open time.","This block requires a list of candles as an input parameter.","In this example, the open prices from a list of candles are assigned to a variable called “cl”."]}')}}]);
+//# sourceMappingURL=bot.ohlc_values_in_list-json.42cb3b341edd8ce55e4f.js.map
