@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["icon-red-arrow"],{661:function(e,a,n){"use strict";n.r(a);var s=n(2),t=n.n(s),r=n(0),w=n.n(r),c=function(e){var a=e.className;return w.a.createElement("svg",{className:a,width:"50",height:"19",xmlns:"http://www.w3.org/2000/svg"},w.a.createElement("path",{d:"M31 11H0V8h31V0l19 9.5L31 19z",fill:"#FF444F"}))};c.propTypes={className:t.a.string},a.default=c}}]);
-//# sourceMappingURL=core.icon-red-arrow.230ac610a131b5e35063.js.map
