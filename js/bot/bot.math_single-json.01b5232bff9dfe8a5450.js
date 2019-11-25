@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[19],{430:function(e){e.exports=JSON.parse('{"text":["This block performs the following operations to a given number","Available operations are:","- Square root","- Absolute","- Negation","- Natural log","- Euler’s number (2.71) to the power of a given number","- 10 to the power of a given number"]}')}}]);
-//# sourceMappingURL=bot.math_single-json.01b5232bff9dfe8a5450.js.map

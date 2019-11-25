@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[14],{426:function(e){e.exports=JSON.parse('{"text":["This block gives you the last digit of the latest tick value of the selected market. If the latest tick value is 1410.90, this block will return 0. It’s useful for digit-based contracts such as Even/Odd, Matches/Differs, or Higher/Lower."]}')}}]);
-//# sourceMappingURL=bot.last_digit-json.0be3ef03bfd3d0dd4d08.js.map

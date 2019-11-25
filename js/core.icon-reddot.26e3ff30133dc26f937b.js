@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["icon-reddot"],{617:function(e,a,n){"use strict";n.r(a);var r=n(2),t=n.n(r),s=n(0),c=n.n(s),l=function(e){var a=e.className;return c.a.createElement("svg",{className:a,width:"4",height:"4"},c.a.createElement("circle",{cx:"1163",cy:"626",r:"2",transform:"translate(-1161 -624)",fill:"#E31C4B",fillRule:"nonzero"}))};l.propTypes={className:t.a.string},a.default=l}}]);
+//# sourceMappingURL=core.icon-reddot.26e3ff30133dc26f937b.js.map

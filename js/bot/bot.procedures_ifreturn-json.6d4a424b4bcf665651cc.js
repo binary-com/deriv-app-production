@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[24],{435:function(e){e.exports=JSON.parse('{"text":["Used within a function block, this block returns a value when a specific condition is true.","Example:"]}')}}]);
-//# sourceMappingURL=bot.procedures_ifreturn-json.6d4a424b4bcf665651cc.js.map

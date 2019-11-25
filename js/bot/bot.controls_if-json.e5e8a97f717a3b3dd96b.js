@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[8],{420:function(e){e.exports=JSON.parse('{"text":["This block evaluates a statement and will perform an action only when the statement is true.","Click the plus icon to extend the functionality of this block.","You can also use \\"Compare\\" and \\"Logic operation\\" blocks to make test variables."]}')}}]);
-//# sourceMappingURL=bot.controls_if-json.e5e8a97f717a3b3dd96b.js.map

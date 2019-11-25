@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[21],{432:function(e){e.exports=JSON.parse('{"text":["This block gives you a list of candles within a selected time interval.","In this example, this block is used with another block to get the open prices from a list of candles. The open prices are then assigned to the variable called “cl”."]}')}}]);
-//# sourceMappingURL=bot.ohlc-json.d06f918d41aa84c46fd6.js.map
